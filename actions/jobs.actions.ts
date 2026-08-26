@@ -7,21 +7,34 @@ import { revalidatePath } from 'next/cache'
 import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs/server";
 import { JobType, MidType, MidTypePopulate } from "@/lib/types/jobtype";
+import { logger } from "@/lib/logger";
+import { ApplicationStatus } from "@/lib/enums";
 export async function saveJob(userId:string,jobId:string){
+    // Validate jobId format
+    if (!mongoose.Types.ObjectId.isValid(jobId)) {
+        logger.warn("Invalid job ID format in saveJob", { jobId });
+        return { success: false, message: "Invalid job ID format", status: 400 };
+    }
+
     var Id = new mongoose.Types.ObjectId(jobId);
     connectToDB();
     try {
-        const response = await User.findOneAndUpdate({clerkId:userId},{$push:{savedJobs:{job:Id,status:0}}});
+        const response = await User.findOneAndUpdate(
+            {clerkId:userId},
+            {$push:{savedJobs:{job:Id,status:ApplicationStatus.NOT_APPLIED}}},
+            {new: true}
+        );
         if(response){
-            console.log("job saved successfully");
-            return {status:200};
+            logger.dbOperation("save job", "users", { userId, jobId });
+            return { success: true, message: "Job saved successfully", status: 200 };
         }
         else{
-            console.log("error while saving");
-            return {status:500}
+            logger.error("Failed to save job - user not found", undefined, { userId, jobId });
+            return { success: false, message: "User not found", status: 404 };
         }
     } catch (error) {
-        return {status:500}
+        logger.error("Exception while saving job", error, { userId, jobId });
+        return { success: false, message: "Internal server error", status: 500 };
     }
 ;
 }
@@ -42,12 +55,12 @@ export async function fetchJob({
   type
 }: Params) {
   await connectToDB();
-  
-  console.log('Fetching jobs with params:', {
+
+  logger.dbOperation("fetch jobs", "jobs", {
     country,
     industry,
-    s,
-    pageNumInt,
+    searchTerm: s,
+    page: pageNumInt,
     type
   });
 
@@ -64,7 +77,7 @@ export async function fetchJob({
       ...(industry !== 'none' && { category: industry })
     };
 
-    console.log('MongoDB query:', JSON.stringify(baseQuery, null, 2));
+    logger.debug('MongoDB query constructed', { query: baseQuery });
 
     const [joblist, nextPage] = await Promise.all([
       Job.find(baseQuery)
@@ -77,79 +90,117 @@ export async function fetchJob({
         .countDocuments()
     ]);
 
-    console.log(`Found ${joblist.length} jobs, nextPage count: ${nextPage}`);
+    logger.info("Jobs fetched successfully", {
+      count: joblist.length,
+      hasNextPage: nextPage > 0
+    });
 
     // Force revalidation of the jobs page
     revalidatePath('/jobs');
 
     return { joblist, nextPage };
   } catch (error) {
-    console.error('Error in fetchJob:', error);
+    logger.error('Error fetching jobs', error, { country, industry, searchTerm: s });
     throw error; // Let the page component handle the error
   }
 }
 export async function deleteJob(jobId:string){
     const {userId} = auth();
-    var Id = new mongoose.Types.ObjectId(jobId);
+
     if(!userId){
-        return {success:false,message:"not authenticated"};
+        logger.warn("Delete job attempt without authentication", { jobId });
+        return { success: false, message: "Not authenticated" };
     }
+
+    // Validate jobId format
+    if (!mongoose.Types.ObjectId.isValid(jobId)) {
+        logger.warn("Invalid job ID format in deleteJob", { jobId });
+        return { success: false, message: "Invalid job ID format" };
+    }
+
+    var Id = new mongoose.Types.ObjectId(jobId);
+
     try {
         await connectToDB();
-        const response = await User.findOneAndUpdate({clerkId:userId},{$pull:{savedJobs:{job:{$in:[Id]}}}});
+        const response = await User.findOneAndUpdate(
+            {clerkId:userId},
+            {$pull:{savedJobs:{job:{$in:[Id]}}}},
+            {new: true}
+        );
         if(response){
-            console.log("job deleted successfully")
+            logger.dbOperation("delete job", "users", { userId, jobId });
             revalidatePath("../dashboard/jobs");
-            return {success:true,message:"success"};
+            return { success: true, message: "Job deleted successfully" };
         }
         else {
-            return { success: false, message: "Job not found" };
+            logger.warn("Job deletion failed - user not found", { userId, jobId });
+            return { success: false, message: "User not found" };
         }
     } catch (error) {
-        console.log(error);
-        return {success:false,message:"Unexpected error occured"};
+        logger.error("Failed to delete job", error, { userId, jobId });
+        return { success: false, message: "Internal server error" };
     }
 }
 export async function changeStatus(jobId:string,stat:number){
     const {userId} = auth().protect()
-    var Id = new mongoose.Types.ObjectId(jobId);
+
     if(!userId){
-        return {success:false,message:"not authenticated"};
+        logger.warn("Status change attempt without authentication", { jobId });
+        return { success: false, message: "Not authenticated" };
     }
+
+    // Validate jobId format
+    if (!mongoose.Types.ObjectId.isValid(jobId)) {
+        logger.warn("Invalid job ID format in changeStatus", { jobId });
+        return { success: false, message: "Invalid job ID format" };
+    }
+
+    // Validate status value
+    if (typeof stat !== 'number' || stat < 0 || stat > 3) {
+        logger.warn("Invalid status value", { jobId, stat });
+        return { success: false, message: "Invalid status value" };
+    }
+
     try{
         await connectToDB()
         const user = await User.findOne({clerkId:userId})
         if(!user){
-            console.log("user not found")
-            return {success:false,message:"user not found"};
+            logger.warn("User not found for status change", { userId, jobId });
+            return { success: false, message: "User not found" };
         }
         const jobList: MidType[] = user?.savedJobs;
         jobList.forEach((elem)=>{
             if(elem.job.toString() == jobId){
-                if(stat>(elem.status as number)){
-                    console.log("hi")
-                    elem.status = new Number(stat);
+                const currentStatus = elem.status as number;
+                if(stat > currentStatus){
+                    elem.status = stat;
                 }
-                else if(stat == (elem.status as number)){
-                    if(elem.status as number >= 1){
-                        elem.status = new Number(elem.status as number - 1)
+                else if(stat == currentStatus){
+                    if(currentStatus >= 1){
+                        elem.status = currentStatus - 1;
                     }
                 }
-                console.log("stat", stat)
-                console.log("current", elem.status as number)
+                logger.debug("Job status update", {
+                    jobId,
+                    requestedStatus: stat,
+                    currentStatus,
+                    newStatus: elem.status
+                });
             }
         })
         const response = await user.save();
         if(response){
-            console.log("status changed successfully")
+            logger.dbOperation("update job status", "users", { userId, jobId, newStatus: stat });
             revalidatePath("../dashboard/jobs")
-            return {success:true,message:"status changed successfully"};
+            return { success: true, message: "Status changed successfully" };
         }
         else {
-            return { success: false, message: "Error" };
+            logger.error("Failed to save status change", undefined, { userId, jobId });
+            return { success: false, message: "Failed to update status" };
         }
     }
     catch(error){
-        return{ success: false, message:"error" };
+        logger.error("Exception during status change", error, { userId, jobId, stat });
+        return { success: false, message: "Internal server error" };
     }
 }

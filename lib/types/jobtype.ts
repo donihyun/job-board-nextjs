@@ -1,32 +1,37 @@
-import { ObjectId } from "mongoose";
-import mongoose from "mongoose"
-export interface JobType{
-    _id:ObjectId
-    country:string,
-    category:string,
-    title:string,
-    location:string,
-    date:string,
-    salary:string,
-    url:string,
-    company:string,
-    description:string,
-    contracttype:string,
-};
-export interface MidType{
-    job:mongoose.Schema.Types.ObjectId,
-    status:Number
-}
-export interface UserType{
-    clerkId:string,
-    email:string,
-    username?:string,
-    photo:string,
-    firstName?:string,
-    lastName?:string,
-    savedJobs?:MidType[],
-}
-export interface MidTypePopulate{
-    job:JobType,
-    status:Number
-}
+// Re-export types from the main types file for backwards compatibility
+export type {
+  JobType,
+  MidType,
+  UserType,
+  MidTypePopulate,
+  LocalizedString,
+  UnifiedJob,
+  CareerJetJob,
+  AdzunaJob,
+  JobSearchResponse,
+  ApiErrorResponse,
+  ApiSuccessResponse,
+  ApiResponse,
+  ClerkUserData,
+  SearchParams,
+  JobFilters,
+  JobId,
+  FilterUpdate,
+  JobCategory,
+} from "./index";
+
+export {
+  CareerJetJobSchema,
+  CareerJetResponseSchema,
+  AdzunaJobSchema,
+  AdzunaResponseSchema,
+  MongoDBJobSchema,
+  JobFiltersSchema,
+  SearchParamsSchema,
+  CreateUserSchema,
+  SaveJobSchema,
+  isLocalizedString,
+  isMongoDBJob,
+  isCareerJetJob,
+  isAdzunaJob,
+} from "./index";

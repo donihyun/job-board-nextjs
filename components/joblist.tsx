@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/pagination";
 import { cn, checkNullandCall, formatDate } from "@/lib/utils";
 import { filterJobs, type JobSort, type JobView } from "@/lib/job-filters";
+import { getContractTypeLabel, getWorkHoursLabel } from "@/lib/enums";
 
 interface Job {
   _id: string;
@@ -84,11 +85,11 @@ const JobCard = ({ job, country }: { job: Job; country: string }) => {
                 "rounded-full bg-white p-1 px-2 text-sm w-max"
               )}
             >
-              {job.contracttype === "p" ? "Permanent" : "Contract"}
+              {getContractTypeLabel(job.contracttype)}
             </div>}
             {job.workHours && (
               <div className="w-max rounded-full bg-white p-1 px-2 text-sm text-emerald-700">
-                {job.workHours === "f" ? "Full-time" : "Part-time"}
+                {getWorkHoursLabel(job.workHours)}
               </div>
             )}
           </div>

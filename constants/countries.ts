@@ -4,7 +4,7 @@ export const countries = [
   { value: "austria", label: "Austria", korean: "오스트리아", flag: "/austria.png" },
   { value: "belgium", label: "Belgium", korean: "벨기에", flag: "/belgium.png" },
   { value: "canada", label: "Canada", korean: "캐나다", flag: "/canada.png" },
-  { value: "czeckia", label: "Czech Republic", korean: "체코", flag: "/czech republic.png" },
+  { value: "czechia", label: "Czech Republic", korean: "체코", flag: "/czech republic.png" },
   { value: "denmark", label: "Denmark", korean: "덴마크", flag: "/denmark.png" },
   { value: "france", label: "France", korean: "프랑스", flag: "/france.png" },
   { value: "germany", label: "Germany", korean: "독일", flag: "/germany.png" },

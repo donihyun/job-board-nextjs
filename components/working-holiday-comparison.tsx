@@ -9,7 +9,7 @@ import { ArrowUpRight, Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import { countryFlag, countryKo, durationKo, visaValueKo, type Visa } from "@/constants/visas";
 
-const routeOverrides: Record<string, string> = { "United Kingdom": "uk", "New Zealand": "newzealand", Czechia: "czeckia", "Hong Kong": "hong-kong" };
+const routeOverrides: Record<string, string> = { "United Kingdom": "uk", "New Zealand": "newzealand", Czechia: "czechia", "Hong Kong": "hong-kong" };
 const routeFor = (country: string) => routeOverrides[country] || country.toLowerCase().replaceAll(" ", "-");
 const quotas: Record<string, string> = { Netherlands: "200", "New Zealand": "3,000", Taiwan: "800", Latvia: "100", Luxembourg: "100", Belgium: "200", Spain: "1,000", Argentina: "200", Ireland: "800", Andorra: "50", "United Kingdom": "5,000", Austria: "300", Israel: "200", Italy: "500", Japan: "10,000", Czechia: "300", Canada: "10,000", Portugal: "200", Poland: "200", France: "2,000", Hungary: "100", "Hong Kong": "1,000", Brazil: "300" };
 const unlimitedQuota = new Set(["Australia", "Chile", "Denmark", "Germany", "Sweden"]);

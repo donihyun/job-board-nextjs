@@ -5,7 +5,7 @@
 "use client";
 
 import Link from "next/link";
-import { Fragment } from "react";
+import { Fragment, memo } from "react";
 import { ArrowUpRight, ChevronDown, Copy, GitCompare, Search, X } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
@@ -32,7 +32,7 @@ const categoryBadgeClass: Record<Visa["category"], string> = {
 const localWorkAllowed = (visa: Visa) => ["Open", "Employer-specific", "Occupation-specific", "Limited hours"].includes(visa.work_scope);
 const auditStatusKo = { Verified: "금액 확인됨", "Varies or not numeric": "변동·숫자 미공개", "Not published on source": "공식 페이지 미공개", "Fetch failed": "출처 접속 실패" } as const;
 
-export default function VisaClientWrapper({ visas }: Props) {
+const VisaClientWrapper = memo(function VisaClientWrapper({ visas }: Props) {
   const chartAdSlot = process.env.NEXT_PUBLIC_ADSENSE_VISACHART_SLOT;
   const router = useRouter();
   const pathname = usePathname();
@@ -437,4 +437,7 @@ export default function VisaClientWrapper({ visas }: Props) {
       )}
     </div>
   );
-}
+});
+VisaClientWrapper.displayName = "VisaClientWrapper";
+
+export default VisaClientWrapper;

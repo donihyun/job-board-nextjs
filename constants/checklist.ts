@@ -1,4 +1,6 @@
-export const checks = [
+import type { CountryChecklistData } from "@/lib/types";
+
+export const checks: CountryChecklistData[] = [
   {
       country: "canada",
       eligibility: [

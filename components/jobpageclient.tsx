@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, memo } from "react";
 import { useRouter } from "next/navigation";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -13,33 +13,14 @@ import { CareerJetCta } from "@/components/careerjetcta";
 import JobList from "@/components/joblist";
 import { JobKeyword, jobIconsMap } from "@/components/jobiconsmap";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-
-// Types
-export interface JobFilters {
-  country: string;
-  industry: string;
-  query: string;
-  location: string;
-  page: number;
-  type: string;
-  hours: string;
-  days: string;
-}
-interface FilterUpdate {
-  key: keyof JobFilters;
-  value: string | number;  
-}
-
-interface Category {
-  name: string;
-  keyword: string;
-}
+import { ContractType, WorkHours, getContractTypeLabel, getWorkHoursLabel } from "@/lib/enums";
+import type { UnifiedJob, JobFilters, FilterUpdate, JobCategory } from "@/lib/types";
 
 interface JobPageClientProps {
-  initialJobs: any[];
+  initialJobs: UnifiedJob[];
   nextPage: number;
   initialFilters: JobFilters;
-  categories: Category[];
+  categories: JobCategory[];
 }
 interface ActiveFiltersProps {
   filters: JobFilters;
@@ -48,13 +29,13 @@ interface ActiveFiltersProps {
 }
 const WORK_TYPES = [
   { name: "All", type: "" },
-  { name: "Permanent", type: "p" },
-  { name: "Contract", type: "c" }
+  { name: "Permanent", type: ContractType.PERMANENT },
+  { name: "Contract", type: ContractType.CONTRACT }
 ] as const;
 const WORK_HOURS = [
   { name: "All", value: "" },
-  { name: "Full-time", value: "f" },
-  { name: "Part-time", value: "p" },
+  { name: "Full-time", value: WorkHours.FULL_TIME },
+  { name: "Part-time", value: WorkHours.PART_TIME },
 ] as const;
 const POSTED_WITHIN = [
   { name: "Any time", value: "" },
@@ -68,7 +49,7 @@ interface FilterTagProps {
   label: string;
   onClear: () => void;
 }
-function FilterTag({ label, onClear }: FilterTagProps) {
+const FilterTag = memo(({ label, onClear }: FilterTagProps) => {
   return (
     <div className="mb-5 min-w-[100px] py-2 bg-indigo-200 flex justify-center px-2 w-max relative group text-sm text-indigo-600 shadow-lg rounded-md">
       {label}
@@ -80,8 +61,9 @@ function FilterTag({ label, onClear }: FilterTagProps) {
       </button>
     </div>
   );
-}
-function BreadCrumb({country,countryName}:{country:string,countryName:string}){
+});
+FilterTag.displayName = "FilterTag";
+const BreadCrumb = memo(({country,countryName}:{country:string,countryName:string}) => {
   return(
     <BreadcrumbDemo
         prev={[{ href: ["japan", "portugal"].includes(country) ? "/" : `/${country}`, name: countryName }]}
@@ -92,7 +74,8 @@ function BreadCrumb({country,countryName}:{country:string,countryName:string}){
         classname="mt-32 pt-7 ml-10"
       />
   )
-}
+});
+BreadCrumb.displayName = "BreadCrumb";
 const isValidJobKeyword = (keyword: string): keyword is JobKeyword => {
   return Object.keys(jobIconsMap).includes(keyword);
 };
@@ -134,7 +117,7 @@ function clearFilter(keyword:string,initialFilters:JobFilters, router:AppRouterI
     return
   }
 }
-function ActiveFilters({ filters, onClear,router}: ActiveFiltersProps) {
+const ActiveFilters = memo(({ filters, onClear,router}: ActiveFiltersProps) => {
   if (!filters) return null;
 
   return (
@@ -153,7 +136,7 @@ function ActiveFilters({ filters, onClear,router}: ActiveFiltersProps) {
       )}
       {filters.type && (
         <FilterTag
-          label={filters.type === "p" ? "Permanent" : "Contract"}
+          label={getContractTypeLabel(filters.type)}
           onClear={() => onClear("type",filters,router)}
         />
       )}
@@ -165,7 +148,7 @@ function ActiveFilters({ filters, onClear,router}: ActiveFiltersProps) {
       )}
       {filters.hours && (
         <FilterTag
-          label={filters.hours === "f" ? "Full-time" : "Part-time"}
+          label={getWorkHoursLabel(filters.hours)}
           onClear={() => onClear("hours", filters, router)}
         />
       )}
@@ -177,9 +160,10 @@ function ActiveFilters({ filters, onClear,router}: ActiveFiltersProps) {
       )}
     </>
   );
-}
+});
+ActiveFilters.displayName = "ActiveFilters";
 
-export default function JobPageClient({
+const JobPageClient = memo(function JobPageClient({
   initialJobs,
   nextPage,
   initialFilters,
@@ -358,4 +342,7 @@ export default function JobPageClient({
       </div>
     </section>
   );
-}
+});
+JobPageClient.displayName = "JobPageClient";
+
+export default JobPageClient;

@@ -24,14 +24,12 @@ function SavedJobCard({category, jobId}:{category:string, jobId:string}) {
         try {
             const response = await deleteJob(jobId);
             if(response.success == true){
-                console.log(response.success);
-                console.log("revalidated");
                 setOpened(false);
             }
         } catch (error) {
-            console.log(error);
+            console.error("Error deleting job:", error);
         }
-    
+
     }
     function handleStart(){
         setOpened(true);

@@ -40,10 +40,9 @@ export function ProfileForm({userId}:{userId:string}) {
         setIsLoading(true);
         const respond = await setUserName(userId, values.username);
         if(respond.status!= 200){
-            console.log("error while saving username");
+            console.error("Error saving username");
         }
         else{
-            console.log("username saved");
             router.replace("/");
         }
     }

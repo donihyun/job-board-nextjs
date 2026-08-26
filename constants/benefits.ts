@@ -378,7 +378,7 @@ export const benefits = [
         ]
     },
     {
-        country: "czeckia",
+        country: "czechia",
         benefitList: [
             {
                 title: "역사적인 도시",

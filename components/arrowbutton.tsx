@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 import { motion } from 'framer-motion'
 const ArrowButton = ({current,text,index,jobId}:{current:number, text:string,index:number,jobId:string}) => {
     async function handleClick(){
-        const response = await changeStatus(jobId,index).catch((error)=>console.log(error));
+        const response = await changeStatus(jobId,index).catch((error)=>console.error("Error changing status:", error));
     }
     return(
       <motion.button

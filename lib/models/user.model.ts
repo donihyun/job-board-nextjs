@@ -27,7 +27,7 @@ const UserSchema = new Schema({
         {
         job:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"Country"
+        ref:"Job"
         },
         status:{
             type:Number

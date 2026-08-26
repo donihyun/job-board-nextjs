@@ -4,6 +4,8 @@ import { connectToDB } from "@/lib/db";
 import User from "@/lib/models/user.model";
 import { auth } from "@clerk/nextjs/server";
 import BarforHeader from "@/components/barforheader";
+import { logger } from "@/lib/logger";
+
 export default async function UserLayout({
     children,
   }: {
@@ -11,14 +13,14 @@ export default async function UserLayout({
   }) {
     const db = await connectToDB();
     const {userId} = auth();
-    
+
     let firstName="";
     let lastName="";
     let userName = ""
     let photourl="";
-  
+
     if(userId){
-      console.log(userId);
+      logger.authEvent("User accessing layout", { userId });
       const currentUser = await User.findOne({clerkId:userId});
       firstName = currentUser?.firstName ?? "";
       lastName = currentUser?.lastName ?? "";

@@ -18,7 +18,7 @@ export const countryData = {
   europe: [
     { value: "austria", label: "오스트리아", flag: "/austria.png" },
     { value: "belgium", label: "벨기에", flag: "/belgium.png" },
-    { value: "czeckia", label: "체코", flag: "/czech republic.png" },
+    { value: "czechia", label: "체코", flag: "/czech republic.png" },
     { value: "denmark", label: "덴마크", flag: "/denmark.png" },
     { value: "finland", label: "핀란드", flag: "/finland.png" },
     { value: "france", label: "프랑스", flag: "/france.png" },

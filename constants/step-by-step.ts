@@ -462,7 +462,7 @@ export const stepsData = [
         ]
     },
     {
-        country: "czeckia", // Change this to the appropriate country name
+        country: "czechia", // Change this to the appropriate country name
         stepList: [
             {
               title: 'Meet the Eligibility Criteria',

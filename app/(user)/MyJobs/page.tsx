@@ -21,28 +21,31 @@ import DialogUI from "@/components/dialogui";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { revalidatePath } from "next/cache";
+import { ApplicationStatus, getApplicationStatusLabel } from "@/lib/enums";
+import { logger } from "@/lib/logger";
+
 const status = [
     {
-        index:0,
-        status:"not applied",
+        index: ApplicationStatus.NOT_APPLIED,
+        status: getApplicationStatusLabel(ApplicationStatus.NOT_APPLIED),
         class:"bg-amber-100 text-amber-600",
         icon:<Loader/>
     },
     {
-        index:1,
-        status:"applied",
+        index: ApplicationStatus.APPLIED,
+        status: getApplicationStatusLabel(ApplicationStatus.APPLIED),
         class:"bg-indigo-100 text-indigo-600",
         icon:<MousePointer2/>
     },
     {
-        index:2,
-        status:"interviewed",
+        index: ApplicationStatus.INTERVIEWED,
+        status: getApplicationStatusLabel(ApplicationStatus.INTERVIEWED),
         class:"bg-orange-100 text-orange-600",
         icon:<Speech/>
     },
     {
-        index:3,
-        status:"accepted",
+        index: ApplicationStatus.ACCEPTED,
+        status: getApplicationStatusLabel(ApplicationStatus.ACCEPTED),
         class:"bg-green-100 text-green-600",
         icon:<PartyPopper/>
     },
@@ -50,7 +53,7 @@ const status = [
 async function SavedJobPage() {
     revalidatePath("/MyJobs");
     const {userId} = auth().protect()
-    console.log(userId)
+    logger.authEvent("User accessing saved jobs", { userId });
     await connectToDB();
     let joblist:MidTypePopulate[] = []
     if(!userId){return null;}

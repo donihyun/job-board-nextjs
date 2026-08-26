@@ -8,7 +8,8 @@ async function handleClick(jobId:string){
         const response = await deleteJob(jobId);
         toast("job successfully deleted");
     } catch (error) {
-        console.log(error);
+        console.error("Error deleting job:", error);
+        toast.error("Failed to delete job");
     }
 
 }

@@ -309,7 +309,7 @@ export const questions = [
         ]
       },
       {
-        country:"czeckia",
+        country:"czechia",
         qlist:[
             {
               question: "체코 워킹홀리데이 비자 신청서에서 체류 목적은 어떻게 선택해야 하나요? 📝",

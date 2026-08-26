@@ -8,5 +8,5 @@ export const metadata: Metadata = { title: "체코 워킹홀리데이 비자와 
 export default function CzechiaPage() {
   const visa = workVisaList.find((item) => item.country === "Czechia" && item.category === "Working holiday");
   if (!visa) notFound();
-  return <CountryGuide routeKey="czeckia" visa={visa} />;
+  return <CountryGuide routeKey="czechia" visa={visa} />;
 }

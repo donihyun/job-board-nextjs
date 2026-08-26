@@ -4,9 +4,11 @@ import { connectToDB } from "@/lib/db";
 import User from "@/lib/models/user.model";
 import { redirect } from 'next/navigation'
 import { ProfileForm } from "@/components/usernameform";
+import { logger } from "@/lib/logger";
+
 async function setInfo(){
     const {userId} = auth().protect()
-    console.log(userId);
+    logger.authEvent("User accessing setInfo page", { userId });
     await connectToDB();
     if(!userId){return null;}
     else{

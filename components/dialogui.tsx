@@ -15,28 +15,30 @@ import { ArrowRight } from "lucide-react"
 import { motion } from 'framer-motion'
 import { Search,X,LoaderCircle} from 'lucide-react';
 import {useState} from "react";
+import { ApplicationStatus, getApplicationStatusLabel } from "@/lib/enums";
+
 const status = [
     {
-        index:0,
-        status:"not applied",
+        index: ApplicationStatus.NOT_APPLIED,
+        status: getApplicationStatusLabel(ApplicationStatus.NOT_APPLIED),
         class:"bg-amber-100 text-amber-600",
         icon:<Loader/>
     },
     {
-        index:1,
-        status:"applied",
+        index: ApplicationStatus.APPLIED,
+        status: getApplicationStatusLabel(ApplicationStatus.APPLIED),
         class:"bg-indigo-100 text-indigo-600",
         icon:<MousePointer2/>
     },
     {
-        index:2,
-        status:"interviewed",
+        index: ApplicationStatus.INTERVIEWED,
+        status: getApplicationStatusLabel(ApplicationStatus.INTERVIEWED),
         class:"bg-orange-100 text-orange-600",
         icon:<Speech/>
     },
     {
-        index:3,
-        status:"accepted",
+        index: ApplicationStatus.ACCEPTED,
+        status: getApplicationStatusLabel(ApplicationStatus.ACCEPTED),
         class:"bg-green-100 text-green-600",
         icon:<PartyPopper/>
     },
@@ -47,7 +49,7 @@ const DialogUI = ({jobId, current}:{jobId:string, current:number}) => {
     const [isError,setIsError] = useState(false);
     async function handleClick(jobId:string, index:number){
         setIsLoading(true);
-        const response = await changeStatus(jobId,index).catch((error)=>console.log(error));
+        const response = await changeStatus(jobId,index).catch((error)=>console.error("Error changing status:", error));
         if(response?.success == true){
             setTimeout(() => {
                 setIsLoading(false);

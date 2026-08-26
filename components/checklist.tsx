@@ -62,40 +62,45 @@ const CheckList = ({ country }: { country: string }) => {
           ))}
         </TabsList>
 
-        {tabInfo.map(({ key }) => (
-          <TabsContent key={key} value={key} className="space-y-6">
-            {(countryData?.[`${key}` as keyof typeof countryData] as any[] || []).map((item, index) => (
-              <Card key={index} className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className={cn(
-                      "flex h-12 w-12 shrink-0 items-center justify-center rounded-full",
-                      `bg-${key.split('-')[0]}-100 text-${key.split('-')[0]}-600`
-                    )}>
-                      {tabInfo.find(tab => tab.key === key)?.icon && 
-                        React.createElement(tabInfo.find(tab => tab.key === key)!.icon, { className: `text-h-6 w-6 ${iconStyles[key as keyof typeof iconStyles]}` })}
+        {tabInfo.map(({ key }) => {
+          const categoryData = countryData?.[key as keyof typeof countryData] as Array<{title: string; description: string}> | undefined;
+          const items = categoryData || [];
+
+          return (
+            <TabsContent key={key} value={key} className="space-y-6">
+              {items.map((item, index) => (
+                <Card key={index} className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className={cn(
+                        "flex h-12 w-12 shrink-0 items-center justify-center rounded-full",
+                        `bg-${key.split('-')[0]}-100 text-${key.split('-')[0]}-600`
+                      )}>
+                        {tabInfo.find(tab => tab.key === key)?.icon &&
+                          React.createElement(tabInfo.find(tab => tab.key === key)!.icon, { className: `text-h-6 w-6 ${iconStyles[key as keyof typeof iconStyles]}` })}
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-lg font-semibold leading-tight tracking-tight">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-gray-600">
+                          {item.description}
+                        </p>
+                      </div>
                     </div>
-                    <div className="space-y-2">
-                      <h3 className="text-lg font-semibold leading-tight tracking-tight">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-gray-600">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-            {(countryData?.[`${key}` as keyof typeof countryData] as any[] || []).length === 0 && (
-              <Card className="overflow-hidden border-none shadow-md">
-                <CardContent className="p-6">
-                  <p className="text-center text-gray-600">No information available for this category.</p>
-                </CardContent>
-              </Card>
-            )}
-          </TabsContent>
-        ))}
+                  </CardContent>
+                </Card>
+              ))}
+              {items.length === 0 && (
+                <Card className="overflow-hidden border-none shadow-md">
+                  <CardContent className="p-6">
+                    <p className="text-center text-gray-600">No information available for this category.</p>
+                  </CardContent>
+                </Card>
+              )}
+            </TabsContent>
+          );
+        })}
       </Tabs>
     </section>
   )
