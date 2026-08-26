@@ -1,0 +1,9 @@
+{
+  "date": "2026-08-19",
+  "framework": "Next.js 14 App Router with Tailwind CSS 3",
+  "fonts": ["Space Grotesk", "Noto Sans"],
+  "palette": "Locked VIKB Cobalt tokens in tokens.css",
+  "motion": "framer-motion installed; minimal motion required by design.md",
+  "spacing": "Named 4-point scale in tokens.css",
+  "source": "design.md"
+}

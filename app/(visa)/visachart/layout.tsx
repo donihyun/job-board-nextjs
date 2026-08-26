@@ -1,6 +1,5 @@
 import Container from "@/components/container";
 import Footer from "@/components/footer";
-import mongoose from "mongoose";
 import { connectToDB } from "@/lib/db";
 import User from "@/lib/models/user.model";
 import { Toaster } from "@/components/ui/toaster";
@@ -12,7 +11,6 @@ export default async function CountryLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const db = await connectToDB();
   const {userId} = auth();
   
   let firstName="";
@@ -22,7 +20,7 @@ export default async function CountryLayout({
 
 
   if(userId){
-    console.log(userId);
+    await connectToDB();
     const currentUser = await User.findOne({clerkId:userId});
     if(!(currentUser?.username || currentUser?.firstName || currentUser?.lastName)){
       redirect("/setinfo");
@@ -33,13 +31,14 @@ export default async function CountryLayout({
     photourl = currentUser.photo ?? "";
   }
   return (
-    <>
-    <Container>
-      <BarforHeader firstName = {firstName}  lastName = {lastName} userName={userName} photo = {photourl} enableScrollAnimation={false} />
-      {children}
-      <Footer/>
-    </Container>
-    <Toaster/>
-    </>
+    <div className="min-h-screen bg-[var(--color-control)]">
+      {/* Hallmark · genre: modern-minimal · macrostructure: Workbench · design-system: design.md · designed-as-app */}
+      <Container>
+        <BarforHeader firstName={firstName} lastName={lastName} userName={userName} photo={photourl} enableScrollAnimation={false} lightNotice />
+        {children}
+        <Footer />
+      </Container>
+      <Toaster />
+    </div>
   );
 }

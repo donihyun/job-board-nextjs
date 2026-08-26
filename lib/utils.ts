@@ -10,6 +10,9 @@ interface Param{
   s?: string | "",
   page?:string | "1",
   type?:string,
+  location?:string,
+  hours?: string,
+  days?: string,
 };
 
 interface Param {
@@ -18,6 +21,7 @@ interface Param {
   s?: string;
   page?: string;
   type?: string;
+  location?: string;
 }
 
 export function checkNullandCall(param: Param): URLSearchParams {
@@ -45,6 +49,11 @@ export function checkNullandCall(param: Param): URLSearchParams {
   if (param.type && param.type !== "") {
     paramMap.set("type", param.type);
   }
+  if (param.location && param.location !== "") {
+    paramMap.set("location", param.location);
+  }
+  if (param.hours) paramMap.set("hours", param.hours);
+  if (param.days) paramMap.set("days", param.days);
   
   return new URLSearchParams(Object.fromEntries(paramMap));
 }

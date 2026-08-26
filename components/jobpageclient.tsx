@@ -19,8 +19,11 @@ export interface JobFilters {
   country: string;
   industry: string;
   query: string;
+  location: string;
   page: number;
   type: string;
+  hours: string;
+  days: string;
 }
 interface FilterUpdate {
   key: keyof JobFilters;
@@ -48,6 +51,17 @@ const WORK_TYPES = [
   { name: "Permanent", type: "p" },
   { name: "Contract", type: "c" }
 ] as const;
+const WORK_HOURS = [
+  { name: "All", value: "" },
+  { name: "Full-time", value: "f" },
+  { name: "Part-time", value: "p" },
+] as const;
+const POSTED_WITHIN = [
+  { name: "Any time", value: "" },
+  { name: "Past 24 hours", value: "1" },
+  { name: "Past 3 days", value: "3" },
+  { name: "Past 7 days", value: "7" },
+] as const;
 
 // Filter Tag Components
 interface FilterTagProps {
@@ -68,10 +82,9 @@ function FilterTag({ label, onClear }: FilterTagProps) {
   );
 }
 function BreadCrumb({country,countryName}:{country:string,countryName:string}){
-  console.log(country);
   return(
     <BreadcrumbDemo
-        prev={[{ href: `/${country}`, name: countryName }]}
+        prev={[{ href: ["japan", "portugal"].includes(country) ? "/" : `/${country}`, name: countryName }]}
         now={{
           href: `/jobs/?country=${country}`,
           name: "Jobs"
@@ -111,6 +124,12 @@ function clearFilter(keyword:string,initialFilters:JobFilters, router:AppRouterI
   if(keyword == "type"){
     replaceRouter({key:keyword,value:""}, initialFilters, router)
   }
+  if(keyword == "location"){
+    replaceRouter({key:keyword,value:""}, initialFilters, router)
+  }
+  if(keyword == "hours" || keyword == "days"){
+    replaceRouter({key:keyword,value:""}, initialFilters, router)
+  }
   else{
     return
   }
@@ -138,6 +157,24 @@ function ActiveFilters({ filters, onClear,router}: ActiveFiltersProps) {
           onClear={() => onClear("type",filters,router)}
         />
       )}
+      {filters.location && (
+        <FilterTag
+          label={filters.location}
+          onClear={() => onClear("location", filters, router)}
+        />
+      )}
+      {filters.hours && (
+        <FilterTag
+          label={filters.hours === "f" ? "Full-time" : "Part-time"}
+          onClear={() => onClear("hours", filters, router)}
+        />
+      )}
+      {filters.days && (
+        <FilterTag
+          label={`Past ${filters.days === "1" ? "24 hours" : `${filters.days} days`}`}
+          onClear={() => onClear("days", filters, router)}
+        />
+      )}
     </>
   );
 }
@@ -162,16 +199,16 @@ export default function JobPageClient({
     }
   }, [initialFilters, router]);
   return (
-    <section className="min-h-screen w-[80%] max-h-[500vh]">
+    <section className="min-h-screen w-full max-w-[1440px] px-4 sm:px-6 lg:px-8">
       <BreadCrumb country={filters.country} countryName={countryName}/>
-      <div className="items-center grid grid-cols-4">
-        <div className="text-xl md:text-3xl font-bold pt-5 pb-10 flex mx-5 w-full col-span-1">
-          <div className="p-2 rounded-full border-2 w-full bg-indigo-400 h-max shadow-md mr-10 flex justify-center mt-5">
+      <div className="grid items-center gap-4 lg:grid-cols-4">
+        <div className="flex w-full pt-5 lg:col-span-1">
+          <div className="mt-5 flex h-max w-full justify-center rounded-md border border-zinc-200 bg-white p-2">
             <ComboboxForm
               defaultValue={filters.country}
               onChange={
                 (value) => {
-                  handleFilterChange({key:"country", value:value});
+                  router.replace(`?${new URLSearchParams({ country: value })}`);
                 }
               }
             />
@@ -179,12 +216,13 @@ export default function JobPageClient({
         </div>
 
         {/* Search Bar */}
-        <div className="w-full flex flex-col justify-start pt-3 pb-10 pl-4 col-span-3">
+        <div className="flex w-full flex-col justify-start pb-8 pt-3 lg:col-span-3 lg:pl-4">
           <h1 className="font-bold text-xl ml-1">Job Search</h1>
           <div className="bg-zinc-100 border-2 border-zinc-200 p-3 flex flex-col lg:flex-row gap-y-5 items-center gap-x-5 py-5 w-full mt-3 ml-1 rounded-lg">
             <JobsearchBar
               countrykey={filters.country}
               category={filters.industry}
+              query={filters.query}
 
             />
             <ToKorean />
@@ -192,12 +230,12 @@ export default function JobPageClient({
         </div>
       </div>
 
-      <div className="w-full grid items-start grid-cols-4">
+      <div className="grid w-full items-start gap-6 lg:grid-cols-4">
         {/* Filters Section */}
-        <aside className="ml-5 col-span-1">
+        <aside className="lg:col-span-1">
           {/* Categories */}
-          <h1 className="ml-5 mt-1 font-bold text-xl">Category</h1>
-          <div className="mt-6 pl-5 bg-zinc-100 shadow-md pt-1 border-2 border-zinc-200 rounded-lg mr-5 pb-5 pr-5">
+          <h2 className="mt-1 text-xl font-bold">Category</h2>
+          <div className="mt-4 rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2">
             <div className="mt-5 flex text-foreground font-semibold flex-col">
               {categories.map((cat) => {
                 const IconComponent = isValidJobKeyword(cat.keyword)
@@ -223,8 +261,8 @@ export default function JobPageClient({
             </div>
           </div>
 
-          <h1 className="ml-5 mt-10 font-bold text-xl">Job type</h1>
-          <div className="mt-5 px-5 bg-zinc-100 shadow-md py-5 border-2 border-zinc-200 rounded-lg mr-5">
+          <h2 className="mt-8 text-xl font-bold">Job type</h2>
+          <div className="mt-4 rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2">
             {WORK_TYPES.map((work) => (
               <button
                 key={work.type}
@@ -241,16 +279,48 @@ export default function JobPageClient({
             ))}
           </div>
 
-          <div className="mt-20 mr-5">
+          <h2 className="mt-8 text-xl font-bold">Hours</h2>
+          <div className="mt-4 rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2">
+            {WORK_HOURS.map((item) => (
+              <button
+                key={item.value}
+                onClick={() => handleFilterChange({ key: "hours", value: item.value })}
+                className={cn(
+                  filters.hours === item.value ? "bg-black text-white" : "hover:bg-zinc-200",
+                  "flex w-full items-center rounded-md py-3 pl-2 text-left font-bold"
+                )}
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
+
+          <h2 className="mt-8 text-xl font-bold">Posted within</h2>
+          <div className="mt-4 rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2">
+            {POSTED_WITHIN.map((item) => (
+              <button
+                key={item.value}
+                onClick={() => handleFilterChange({ key: "days", value: item.value })}
+                className={cn(
+                  filters.days === item.value ? "bg-black text-white" : "hover:bg-zinc-200",
+                  "flex w-full items-center rounded-md py-3 pl-2 text-left font-bold"
+                )}
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
+
+          <div className="mt-10 hidden lg:block">
             <BackgroundGradientDemo />
           </div>
-          <div className="mt-10 mr-5">
+          <div className="mt-10 hidden lg:block">
             <CareerJetCta />
           </div>
         </aside>
 
         {/* Jobs List Section */}
-        <main className="col-span-3">
+        <main className="min-w-0 lg:col-span-3">
           <div className="flex items-center gap-x-10 flex-wrap">
             <h1 className="ml-5 mb-5 text-xl font-bold">
               {filters.industry === "none"
@@ -271,14 +341,17 @@ export default function JobPageClient({
             </div>
           ) : (
             <JobList
-              key={`${initialFilters.country}-${initialFilters.industry}-${initialFilters.query}-${initialFilters.page}-${initialFilters.type}`}
+              key={`${initialFilters.country}-${initialFilters.industry}-${initialFilters.query}-${initialFilters.location}-${initialFilters.page}-${initialFilters.type}-${initialFilters.hours}-${initialFilters.days}`}
               joblist={initialJobs}
               nextPage={nextPage}
               country={initialFilters.country}
               industry={initialFilters.industry}
               s={initialFilters.query}
+              location={initialFilters.location}
               pageNum={String(initialFilters.page)}
               type={initialFilters.type}
+              hours={initialFilters.hours}
+              days={initialFilters.days}
             />
           )}
         </main>

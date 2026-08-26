@@ -31,7 +31,7 @@ export default function FAQSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   return (
-    <section className="py-16 mt-32 bg-gray-50">
+    <section className="bg-gray-50 py-16 sm:py-20">
       <div className="container mx-auto px-4">
         <div className="px-8">
           <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
@@ -42,7 +42,7 @@ export default function FAQSection() {
             성공적인 워홀 생활을 위한 꿀팁 모음! 놓치지 마세요 ✨
           </p>
         </div>
-        <div className="max-w-3xl mt-20 mx-auto">
+        <div className="mx-auto mt-10 max-w-3xl sm:mt-12">
           {faqs.map((faq, index) => (
             <div key={index} className="mb-4">
               <button

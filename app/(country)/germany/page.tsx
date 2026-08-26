@@ -1,28 +1,12 @@
-import Header from "@/components/header";
-import Information from "@/components/information";
-import { TracingBeam } from "@/components/ui/tracing-beam";
-import CheckList from "@/components/checklist";
-import Subscribe from "@/components/subscribe";
-import JobSection from "@/components/jobsection";
-import StepSection from "@/components/stepbystepsection";
-import BenefitSection from "@/components/benefitsection";
-import QASection from "@/components/qasection";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import CountryGuide from "@/components/country-guide";
+import { workVisaList } from "@/constants/visas";
 
-const CountryPage = () => {
-  const countryName = "Germany"
-  return (
-    <div className="overflow-hidden">
-        <Header name={countryName} bgImage={`/germany/bg.jpg`}/>
-        <TracingBeam className="px-1">
-          <Information country = {"germany"}/>
-          <JobSection country = {"germany"}/> 
-          <StepSection country = {"germany"}/>
-          <CheckList country = {"germany"}/>
-          <BenefitSection country = {"germany"}/>
-          <QASection country = {"germany"}/>
-          <Subscribe country={countryName}/>
-        </TracingBeam>
-    </div>
-  );
-};
-export default CountryPage;
+export const metadata: Metadata = { title: "독일 워킹홀리데이 비자와 일자리", description: "대한민국 여권 기준 독일 워킹홀리데이 조건과 현지 일자리를 확인하세요." };
+
+export default function GermanyPage() {
+  const visa = workVisaList.find((item) => item.country === "Germany" && item.category === "Working holiday");
+  if (!visa) notFound();
+  return <CountryGuide routeKey="germany" visa={visa} />;
+}

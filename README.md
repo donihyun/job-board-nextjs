@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org/) Job Board website created with [CareerJet Developer](https://www.careerjet.co.kr) api. 
+# VIKB
 
-## Getting Started
+Working-holiday country guides and job search built with Next.js, Clerk, and MongoDB.
 
-First, run the development server:
+## Local development
+
+1. Copy `.env.example` to `.env` and fill in the required credentials.
+2. Install dependencies with `corepack pnpm install`.
+3. Start the app with `corepack pnpm dev`.
+
+## Checks
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+corepack pnpm lint
+corepack pnpm build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Data sources
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Country guides are maintained in this repository. Job search currently reads from MongoDB; the next integration target is Careerjet Publisher API v4 using `CAREERJET_API_KEY`.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Never commit `.env` or production credentials.

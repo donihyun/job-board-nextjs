@@ -1,0 +1,69 @@
+/* Hallmark · pre-emit critique: P5 H5 E4 S4 R5 V4
+ * genre: modern-minimal · theme: Cobalt · design-system: design.md
+ * contrast: pass (40–41) · nav: N9 · footer: Ft2 · mobile: pass (34, 49–57)
+ */
+:root {
+  --color-paper: oklch(98% 0.008 255);
+  --color-paper-2: oklch(95% 0.012 255);
+  --color-ink: oklch(22% 0.035 255);
+  --color-ink-2: oklch(48% 0.025 255);
+  --color-rule: oklch(88% 0.018 255);
+  --color-accent: oklch(55% 0.2 260);
+  --color-accent-ink: oklch(99% 0.005 255);
+  --color-focus: oklch(62% 0.2 260);
+  --color-canvas-dark: oklch(18% 0.025 255);
+  --shadow-sheet: 0 20px 60px oklch(8% 0.02 255 / 0.42);
+  --color-control: oklch(100% 0 0);
+  --color-control-hover: oklch(96% 0.004 255);
+  --color-filter-surface: oklch(95% 0.006 255);
+  --color-filter-rule: oklch(80% 0.01 255);
+  --color-advanced-surface: oklch(97% 0.004 255);
+  --color-active-surface: oklch(92% 0.006 255);
+  --color-selected: oklch(31% 0.018 255);
+  --color-selected-ink: oklch(99% 0.002 255);
+  --color-chart-selected: oklch(55% 0.2 260);
+  --color-chart-selected-ink: oklch(99% 0.005 255);
+  --color-chart-rule-strong: oklch(55% 0.2 260);
+  --color-chart-yellow: oklch(88% 0.19 100);
+  --color-chart-yellow-ink: oklch(25% 0.055 75);
+  --color-chart-filter: oklch(96% 0.06 100);
+  --color-success-surface: oklch(100% 0 0);
+  --color-success-ink: oklch(36% 0.105 150);
+  --color-warning-surface: oklch(100% 0 0);
+  --color-warning-ink: oklch(41% 0.1 65);
+  --badge-working-bg: oklch(82% 0.14 255); --badge-working-text: oklch(25% 0.11 255);
+  --badge-student-bg: oklch(84% 0.13 305); --badge-student-text: oklch(27% 0.1 305);
+  --badge-graduate-bg: oklch(83% 0.13 185); --badge-graduate-text: oklch(24% 0.07 185);
+  --badge-sponsored-bg: oklch(86% 0.15 65); --badge-sponsored-text: oklch(28% 0.09 55);
+  --badge-seeker-bg: oklch(88% 0.16 100); --badge-seeker-text: oklch(28% 0.07 85);
+  --badge-nomad-bg: oklch(84% 0.13 345); --badge-nomad-text: oklch(28% 0.1 345);
+  --badge-self-bg: oklch(84% 0.14 145); --badge-self-text: oklch(24% 0.07 145);
+  --badge-temporary-bg: oklch(82% 0.09 235); --badge-temporary-text: oklch(26% 0.07 235);
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-noto-sans), sans-serif;
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 7rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.25rem;
+  --text-display: clamp(2.75rem, 6vw, 5.5rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-short: 180ms;
+  --dur-medium: 280ms;
+  --radius-card: 6px;
+  --radius-input: 6px;
+  --radius-pill: 999px;
+  --rule-thin: 1px;
+}

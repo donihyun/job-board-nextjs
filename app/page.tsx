@@ -1,77 +1,26 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { Button } from "@/components/ui/button"
-import { Search, Briefcase, Globe, BookOpen, Users } from "lucide-react"
 import RankingSection from '@/components/ranking-section'
 import FAQSection from '@/components/faq-section'
-import BlogPreviewSection from '@/components/blog-preview-section'
-import { ScrollAnimation } from '@/components/scroll-animation'
 import ComboboxForm from '@/components/combobox'
-import Image from "next/image";
 import Bar from '@/components/bar'
 import Link from 'next/link'
 import CtaSection from '@/components/ctasection'
-import { FeaturesSectionDemo } from '@/components/featuresection'
 import { BenefitSectionDemo } from '@/components/landingpagebenefit'
+
 export default function LandingPage() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [scrollY, setScrollY] = useState(0)
-  const featuresRef = useRef(null)
-  const benefitsRef = useRef(null)
-  const ctaRef = useRef(null)
-
-  const images = [
-    "/newzealand/bg.jpg",
-    "/newzealand/bg.jpg",
-    "/newzealand/bg.jpg",
-    "/newzealand/bg.jpg",
-    "/newzealand/bg.jpg"
-  ]
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }, 5000)
-
-    const handleScroll = () => {
-      setScrollY(window.scrollY)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      clearInterval(interval)
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-
-  const parallaxStyle = {
-    transform: `translateY(${scrollY * 0.5}px)`,
-  }
-
-  const fadeInUpVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  }
-
-  const staggerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
-  }
-
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-gradient-to-b from-gray-100 to-white">
+    <div className="relative min-h-screen overflow-x-clip bg-[var(--color-paper)] text-[var(--color-ink)]">
       {/* Hero Section with Diagonal Split */}
-      <div className="relative h-screen overflow-hidden">
+      <div className="relative min-h-[100svh] overflow-hidden">
       <Bar />
       
       {/* Background Image with Gradient Overlay */}
       <div
         className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
         style={{
-          backgroundImage: `url(${images[currentImageIndex]})`,
+          backgroundImage: 'url(/newzealand/bg.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -81,7 +30,7 @@ export default function LandingPage() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
       {/* Content Container */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 flex min-h-[100svh] items-center px-4 pb-12 pt-24 sm:px-6 lg:px-8">
         {/* Hero Content */}
         <motion.div
           className="w-full max-w-6xl mx-auto"
@@ -89,7 +38,7 @@ export default function LandingPage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="grid gap-8 md:grid-cols-12 space-x-16 items-center">
+          <div className="grid items-center gap-10 md:grid-cols-12 lg:gap-16">
             {/* Left Side - Title and Text */}
             <div className="md:col-span-6 text-left">
               <motion.div
@@ -102,10 +51,10 @@ export default function LandingPage() {
                   워킹 홀리데이 비자 지원 가능
                 </span>
                 
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
+                <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
                   당신의
                   <span className="block mt-2">완벽한 워킹</span>
-                  <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
+                  <span className="block mt-2 text-blue-300">
                     홀리데이를 찾아보세요
                   </span>
                 </h1>
@@ -123,14 +72,14 @@ export default function LandingPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="bg-black/10 backdrop-blur-md p-8 rounded-2xl border border-white/10">
+              <div className="rounded-lg border border-white/20 bg-black/20 p-5 backdrop-blur-md sm:p-7">
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-semibold text-white">
                       여행지를 찾아보세요
                     </h3>
                     <p className="text-sm text-white/70 mt-1">
-                      전 세계 50개 이상의 여행지 중에서 검색하세요
+                      국가를 선택하고 최신 채용공고를 검색하세요
                     </p>
                   </div>
                   
@@ -141,14 +90,19 @@ export default function LandingPage() {
                       인기 여행지
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {['도쿄', '베를린', '토론토'].map((city) => (
-                        <button
-                          key={city}
+                      {[
+                        { name: '도쿄', country: 'japan', location: 'Tokyo' },
+                        { name: '베를린', country: 'germany', location: 'Berlin' },
+                        { name: '토론토', country: 'canada', location: 'Toronto' },
+                      ].map((city) => (
+                        <Link
+                          key={city.name}
+                          href={`/jobs?${new URLSearchParams({ country: city.country, location: city.location })}`}
                           className="px-3 py-1.5 text-sm text-white/90 bg-white/10 rounded-lg 
                                    hover:bg-white/20 transition-colors duration-200"
                         >
-                          {city}
-                        </button>
+                          {city.name}
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -159,75 +113,21 @@ export default function LandingPage() {
         </motion.div>
       </div>
 
-      {/* Stats Bar */}
-      <motion.div 
-        className="absolute bottom-24 left-0 right-0 z-20"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.8 }}
-      >
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-3 gap-4 max-w-3xl mx-auto bg-white/10 backdrop-blur-md rounded-2xl p-6">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white">50+</div>
-              <div className="text-sm text-white/70">국가</div>
-            </div>
-            <div className="text-center border-x border-white/20">
-              <div className="text-2xl font-bold text-white">1000+</div>
-              <div className="text-sm text-white/70">기회</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white">24/7</div>
-              <div className="text-sm text-white/70">지원</div>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 1,
-          delay: 1,
-          repeat: Infinity,
-          repeatType: 'reverse',
-        }}
-      >
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-sm font-medium text-white/90">스크롤하여 탐색하세요</span>
-          <svg
-            className="w-6 h-6 text-white/90"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
-        </div>
-      </motion.div>
     </div>
-      <section className="py-24 h-screen bg-white">
+      <section className="bg-white py-16 sm:py-20">
         <div className="container mx-auto px-4">
           {/* Title Section */}
-          <div className="text-center mb-16">
+          <div className="mb-10 text-center sm:mb-12">
             <span className="text-sm font-semibold tracking-wider text-zinc-500 uppercase mb-3 block">
               인기 여행지
             </span>
-            <h2 className="text-4xl font-bold text-zinc-900 mb-4">
+            <h2 className="mb-4 text-3xl font-bold text-zinc-900 sm:text-4xl">
               글로벌 도시 탐험
             </h2>
-            <div className="flex items-center justify-center gap-3 max-w-2xl mx-auto">
-              <span className="h-px w-12 bg-zinc-200"></span>
-              <p className="text-zinc-600 text-lg">
+            <div className="mx-auto max-w-2xl">
+              <p className="text-base text-zinc-600 sm:text-lg">
                 활기찬 대도시의 독특한 장소를 발견하세요
               </p>
-              <span className="h-px w-12 bg-zinc-200"></span>
             </div>
           </div>
             <RankingSection />
@@ -241,34 +141,10 @@ export default function LandingPage() {
       {/* CTA Section */}
      <CtaSection/>
 
-      {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <ScrollAnimation variants={fadeInUpVariants}>
-            <h2 className="text-3xl font-bold text-center mb-12">여행자들의 후기</h2>
-          </ScrollAnimation>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { name: "Sarah L.", country: "캐나다", text: "호주에서의 워킹 홀리데이는 제 인생을 바꿨어요. 이 플랫폼 덕분에 계획과 준비가 정말 쉬웠어요!" },
-              { name: "Miguel R.", country: "스페인", text: "이 사이트를 통해 뉴질랜드에서 멋진 일자리를 찾았어요. 비자 안내가 정말 도움이 됐어요." },
-              { name: "Yuki T.", country: "일본", text: "아일랜드에서 일하는 것은 꿈이었어요. 스트레스 없이 가능하게 해줘서 감사합니다!" }
-            ].map((testimonial, index) => (
-              <ScrollAnimation key={index} variants={fadeInUpVariants}>
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <p className="text-gray-600 mb-4">{testimonial.text}</p>
-                  <p className="font-semibold">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">{testimonial.country}</p>
-                </div>
-              </ScrollAnimation>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="hidden">
             <div>
               <h3 className="text-lg font-semibold mb-4">회사 소개</h3>
               <p className="text-sm">우리는 전 세계의 여행자들에게 삶을 바꾸는 워킹 홀리데이 기회를 제공하는 데 열정을 가지고 있습니다.</p>
@@ -312,8 +188,11 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-          <div className="mt-8 text-center text-sm">
-            <p>&copy; 2023 Working Holiday Search. All rights reserved.</p>
+          <div className="flex flex-col items-center justify-between gap-3 text-sm text-white/70 sm:flex-row">
+            <p>&copy; 2026 VIKB · Australia working holiday jobs</p>
+            <Link href="/jobs?country=australia" className="font-medium text-white hover:text-blue-300">
+              Search jobs →
+            </Link>
           </div>
         </div>
       </footer>

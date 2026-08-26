@@ -1,21 +1,9 @@
 "use client"
 
-import { useState } from "react";
-import { useAuth } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
+import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MoveRight, LoaderCircle, Check, CircleX, Heart } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  DialogClose,
-} from "@/components/ui/dialog";
+import { MoveRight } from "lucide-react";
 import {
   Pagination,
   PaginationContent,
@@ -23,8 +11,8 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { saveJob } from "@/actions/jobs.actions";
 import { cn, checkNullandCall, formatDate } from "@/lib/utils";
+import { filterJobs, type JobSort, type JobView } from "@/lib/job-filters";
 
 interface Job {
   _id: string;
@@ -41,7 +29,9 @@ interface Job {
   date: string;
   salary: string;
   category: string;
-  contracttype: "p" | "c";
+  contracttype?: string;
+  workHours?: string;
+  source: "CareerJet" | "Adzuna";
 }
 
 interface JobListProps {
@@ -50,146 +40,29 @@ interface JobListProps {
   country: string;
   industry: string;
   s: string;
+  location: string;
   pageNum: string;
   type: string;
+  hours: string;
+  days: string;
 }
 
-enum SaveStatus {
-  IDLE = 0,
-  LOADING = 1,
-  SUCCESS = 2,
-  ERROR = 3,
+function trackOutbound(job: Job, country: string) {
+  fetch("/api/events/outbound", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ source: job.source, country, jobId: job._id, title: job.title.en }),
+    keepalive: true,
+  }).catch(() => {});
 }
 
-const SaveJobDialog = ({
-  isLoading,
-  onSave,
-  onNavigate,
-  onReset,
-}: {
-  isLoading: SaveStatus;
-  onSave: () => void;
-  onNavigate: () => void;
-  onReset: () => void;
-}) => {
-  if (isLoading === SaveStatus.SUCCESS) {
-    return (
-      <div>
-        <DialogHeader>
-          <DialogTitle className="flex items-center gap-x-3">
-            Job successfully saved! <Check className="text-green-500" />
-          </DialogTitle>
-        </DialogHeader>
-        <div className="flex justify-end w-full gap-x-5 mt-3">
-          <Button className="bg-black w-[150px]" onClick={onNavigate}>
-            Go to dashboard
-          </Button>
-          <DialogClose asChild>
-            <Button type="button" variant="secondary" className="w-[100px]">
-              Close
-            </Button>
-          </DialogClose>
-        </div>
-      </div>
-    );
-  }
-
-  if (isLoading === SaveStatus.ERROR) {
-    return (
-      <div className="w-full p-5 h-full flex flex-col text-xl font-semibold items-center justify-center">
-        <div>Something Went Wrong!</div>
-        <CircleX className="text-pink-500 font-semibold text-3xl" />
-      </div>
-    );
-  }
-
+const JobCard = ({ job, country }: { job: Job; country: string }) => {
   return (
-    <div>
-      <DialogHeader>
-        <DialogTitle>Save this Job?</DialogTitle>
-        <DialogDescription>
-          You can check your saved jobs in your dashboard.
-        </DialogDescription>
-      </DialogHeader>
-      <div className="flex justify-end w-full gap-x-5 mt-3 items-center">
-        <Button className="bg-black w-[100px]" onClick={onSave}>
-          {isLoading === SaveStatus.LOADING ? (
-            <LoaderCircle className="animate-spin" />
-          ) : (
-            "Save"
-          )}
-        </Button>
-        <DialogClose asChild>
-          <Button type="button" variant="secondary" className="w-[100px]" onClick={onReset}>
-            Close
-          </Button>
-        </DialogClose>
-      </div>
-    </div>
-  );
-};
-
-const JobCard = ({ 
-  job,
-  onSaveJob,
-  isSignedIn 
-}: { 
-  job: Job;
-  onSaveJob: (jobId: string) => Promise<boolean>;
-  isSignedIn: boolean;
-}) => {
-  const router = useRouter();
-  const [saveStatus, setSaveStatus] = useState<SaveStatus>(SaveStatus.IDLE);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-
-  const handleSave = async (jobId: string) => {
-    if (!isSignedIn) {
-      setSaveStatus(SaveStatus.LOADING);
-      router.push("/sign-up");
-      return;
-    }
-
-    try {
-      setSaveStatus(SaveStatus.LOADING);
-      const success = await onSaveJob(jobId);
-      setSaveStatus(success ? SaveStatus.SUCCESS : SaveStatus.ERROR);
-    } catch (error) {
-      setSaveStatus(SaveStatus.ERROR);
-    }
-  };
-
-  return (
-    <div className="w-full min-h-[150px] group hover:cursor-pointer mb-5 bg-zinc-100 border-2 rounded-md border-zinc-200">
-      <div className="flex mt-5 pb-5 px-4 justify-between items-start">
-        <div className="flex flex-col">
+    <li className="mb-5 min-h-[150px] w-full rounded-md border-2 border-zinc-200 bg-zinc-100">
+      <div className="flex flex-col gap-6 px-4 pb-5 pt-5 sm:flex-row sm:justify-between sm:items-start">
+        <div className="min-w-0 flex flex-col">
           <div className="flex items-start group gap-x-4">
             <h1 className="font-bold text-lg max-w-[500px]">{job.title.en}</h1>
-            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-              <DialogTrigger asChild>
-                <button className="z-10">
-                  <div className="hover:cursor-pointer transition-all group-hover:visible invisible hover:scale-110 hover:text-indigo-600">
-                    <Heart className="w-7 h-7"/>
-                  </div>
-                </button>
-              </DialogTrigger>
-              <DialogContent onInteractOutside={() => {
-                setIsDialogOpen(false);
-                setSaveStatus(SaveStatus.IDLE);
-              }}>
-                <SaveJobDialog
-                  isLoading={saveStatus}
-                  onSave={() => handleSave(job._id)}
-                  onNavigate={() => {
-                    setIsDialogOpen(false);
-                    router.push("/myjobs");
-                  }}
-                  onReset={() => {
-                    setIsDialogOpen(false);
-                    setSaveStatus(SaveStatus.IDLE);
-                  }}
-                />
-              </DialogContent>
-            </Dialog>
           </div>
           <div className="flex items-center mt-5 gap-x-5">
             <div className="text-primary rounded-full bg-white p-1 px-2 text-sm w-max">
@@ -205,17 +78,22 @@ const JobCard = ({
             <div className="text-indigo-600 rounded-full bg-white p-1 px-2 text-sm w-max">
               {job.category.charAt(0).toUpperCase() + job.category.slice(1)}
             </div>
-            <div
+            {job.contracttype && <div
               className={cn(
                 job.contracttype === "p" ? "text-violet-600" : "text-amber-600",
                 "rounded-full bg-white p-1 px-2 text-sm w-max"
               )}
             >
               {job.contracttype === "p" ? "Permanent" : "Contract"}
-            </div>
+            </div>}
+            {job.workHours && (
+              <div className="w-max rounded-full bg-white p-1 px-2 text-sm text-emerald-700">
+                {job.workHours === "f" ? "Full-time" : "Part-time"}
+              </div>
+            )}
           </div>
         </div>
-        <div className="flex flex-col text-muted-foreground w-[30%] gap-y-4">
+        <div className="flex min-w-0 flex-col gap-y-4 text-muted-foreground sm:w-[38%] lg:w-[32%]">
           <div className="flex gap-x-2 items-center">
             <Image src="/business.svg" width={20} height={20} alt="company" />
             <h2 className="font-medium">{job.company}</h2>
@@ -226,14 +104,27 @@ const JobCard = ({
           </div>
           <Link
             href={job.url}
-            className="text-indigo-600 p-1 rounded-full bg-white w-max px-4 animate border-2 border-white hover:border-indigo-600 hover:bg-indigo-600 hover:text-white duration-500 font-semibold flex gap-x-1 mt-8"
+            onClick={() => trackOutbound(job, country)}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+            className="flex w-fit max-w-full items-center gap-x-1 whitespace-nowrap rounded-md border border-indigo-600 px-4 py-2 text-sm font-semibold text-indigo-600 transition-colors duration-200 hover:bg-indigo-600 hover:text-white"
           >
-            Continue with CareerJet
-            <MoveRight className="transition w-[20px] transform group-hover:translate-x-1 duration-100" />
+            Continue with {job.source}
+            <MoveRight className="h-5 w-5" />
           </Link>
+          {job.source === "Adzuna" && (
+            <Link
+              href="https://www.adzuna.com.au/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex min-h-[23px] min-w-[116px] w-fit items-center justify-center text-xs font-semibold text-muted-foreground underline"
+            >
+              Jobs by Adzuna
+            </Link>
+          )}
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 
@@ -243,22 +134,21 @@ export default function JobList({
   country,
   industry,
   s,
+  location,
   pageNum,
   type,
+  hours,
+  days,
 }: JobListProps) {
-  const router = useRouter();
-  const { isSignedIn, userId } = useAuth();
   const pageNumInt = parseInt(pageNum, 10);
-
-  const handleSaveJob = async (jobId: string): Promise<boolean> => {
-    try {
-      const res = await saveJob(userId!, jobId);
-      return res.status === 200;
-    } catch (error) {
-      console.error(error);
-      return false;
-    }
-  };
+  const [source, setSource] = useState<JobView>("all");
+  const [salaryOnly, setSalaryOnly] = useState(false);
+  const [sort, setSort] = useState<JobSort>("mixed");
+  const visibleJobs = useMemo(
+    () => filterJobs(joblist, source, salaryOnly, sort, days),
+    [joblist, source, salaryOnly, sort, days]
+  );
+  const sourceCount = (name: Job["source"]) => joblist.filter((job) => job.source === name).length;
 
   if (joblist.length === 0) {
     return (
@@ -270,14 +160,47 @@ export default function JobList({
 
   return (
     <>
-      <ul className="mb-1 ml-5">
-        {joblist.map((job) => (
-          <JobCard 
-            key={job._id} 
-            job={job} 
-            onSaveJob={handleSaveJob}
-            isSignedIn={isSignedIn ?? false}
+      <div className="mb-5 ml-5 flex flex-wrap items-center gap-3 rounded-md border border-zinc-200 bg-white p-3 text-sm">
+        <label className="font-medium" htmlFor="job-source">Source</label>
+        <select
+          id="job-source"
+          value={source}
+          onChange={(event) => setSource(event.target.value as JobView)}
+          className="rounded-md border border-zinc-300 bg-white px-3 py-2"
+        >
+          <option value="all">All ({joblist.length})</option>
+          <option value="CareerJet">CareerJet ({sourceCount("CareerJet")})</option>
+          <option value="Adzuna">Adzuna ({sourceCount("Adzuna")})</option>
+        </select>
+        <label className="ml-1 flex cursor-pointer items-center gap-2">
+          <input
+            type="checkbox"
+            checked={salaryOnly}
+            onChange={(event) => setSalaryOnly(event.target.checked)}
+            className="h-4 w-4 accent-black"
           />
+          Salary listed
+        </label>
+        <label className="ml-auto font-medium" htmlFor="job-sort">Sort</label>
+        <select
+          id="job-sort"
+          value={sort}
+          onChange={(event) => setSort(event.target.value as JobSort)}
+          className="rounded-md border border-zinc-300 bg-white px-3 py-2"
+        >
+          <option value="mixed">Mixed sources</option>
+          <option value="newest">Newest first</option>
+        </select>
+      </div>
+
+      {visibleJobs.length === 0 && (
+        <p className="ml-5 rounded-md bg-zinc-100 p-6 text-center text-muted-foreground">
+          No jobs match these filters.
+        </p>
+      )}
+      <ul className="mb-1 ml-5">
+        {visibleJobs.map((job) => (
+          <JobCard key={job._id} job={job} country={country} />
         ))}
       </ul>
 
@@ -290,7 +213,10 @@ export default function JobList({
                 page: String(pageNumInt - 1),
                 industry,
                 s,
+                location,
                 type,
+                hours,
+                days,
               })}`}
               className={cn(
                 pageNum === "1" ? "hidden" : "",
@@ -305,7 +231,10 @@ export default function JobList({
                 page: String(pageNumInt + 1),
                 industry,
                 s,
+                location,
                 type,
+                hours,
+                days,
               })}`}
               className={cn(
                 nextPage === 0 ? "hidden" : "",

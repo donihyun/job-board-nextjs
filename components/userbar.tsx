@@ -8,10 +8,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { User } from "lucide-react";
-import LoginButton from "./ui/loginbutton";
 import { SignInButton, SignOutButton } from "@clerk/nextjs";
 import Image from "next/image";
-import ModeToggle from "@/components/togglemode";
 import { SignedIn,SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
 interface Profile{
@@ -26,7 +24,7 @@ const UserBar = ({firstName,lastName,userName, photo}:Profile) => {
       <div>
         <SignedOut>
           <Link href = "/sign-in" className="w-full h-full">
-            <div className=" bg-red-500 bg-gradient-to-r px-5 py-3 flex justify-center gap-x-3 items-center text-white from-indigo-500 to-purple-500 w-full h-full rounded-lg">
+            <div className="flex h-full w-full items-center justify-center gap-x-2 rounded-md bg-blue-700 px-4 py-2 text-white hover:bg-blue-800">
               <h1 className="text-semibold">Login</h1>
               <User/>
             </div>
@@ -36,7 +34,7 @@ const UserBar = ({firstName,lastName,userName, photo}:Profile) => {
           <DropdownMenu modal={false}>
             <DropdownMenuTrigger>
               <div className="flex justify-center ">
-                <div className="w-10 h-10 relative bg-gradient-to-r flex justify-center items-center from-indigo-500 to-purple-500 rounded-full">
+                <div className="relative flex h-10 w-10 items-center justify-center rounded-full border-2 border-blue-700 bg-white">
                   <div className="w-[85%] h-[85%] rounded-full relative overflow-hidden">
                     <Image src={photo} fill={true} alt="profilepic" />
                   </div>
@@ -46,9 +44,6 @@ const UserBar = ({firstName,lastName,userName, photo}:Profile) => {
             <DropdownMenuContent>
               <DropdownMenuLabel>{name}</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                <Link href="/MyJobs">My Jobs</Link>
-              </DropdownMenuItem>
               <DropdownMenuItem><SignOutButton/></DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -56,4 +51,4 @@ const UserBar = ({firstName,lastName,userName, photo}:Profile) => {
       </div>
       )
 }
-export default UserBar; 
+export default UserBar;

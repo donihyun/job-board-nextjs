@@ -1,0 +1,9 @@
+[build]
+command = "corepack pnpm run build"
+publish = ".next"
+
+[[headers]]
+for = "/jobs"
+
+[headers.values]
+Netlify-CDN-Cache-Control = "no-store"

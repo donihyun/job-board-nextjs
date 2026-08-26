@@ -1,0 +1,3169 @@
+{
+  "australia-work-and-holiday-visa-subclass-462": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "australia-student-visa-subclass-500": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "australia-temporary-graduate-visa-subclass-485": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "australia-skills-in-demand-visa-subclass-482": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "canada-iec-working-holiday": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 56
+    }
+  },
+  "canada-iec-young-professionals": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "canada-study-permit-with-work-rights": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "canada-post-graduation-work-permit-pgwp": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "canada-employer-specific-work-permit": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "united-kingdom-youth-mobility-scheme-visa": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 340,
+      "currency": "GBP",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 21
+    }
+  },
+  "united-kingdom-student-visa-with-work-rights": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 21
+    }
+  },
+  "united-kingdom-graduate-visa": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 937,
+      "currency": "GBP",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 56
+    }
+  },
+  "united-kingdom-skilled-worker-visa": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "germany-opportunity-card": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "germany-student-residence-permit-with-work-rights": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "germany-graduate-job-search-residence-permit": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "germany-work-visa-for-qualified-professionals": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "germany-eu-blue-card": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "germany-self-employment-residence-permit": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "new-zealand-korea-working-holiday-visa": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Verified",
+      "amount": 4200,
+      "currency": "NZD",
+      "period": "Total"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 770,
+      "currency": "NZD",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 11
+    }
+  },
+  "new-zealand-fee-paying-student-visa-with-work-rights": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 850,
+      "currency": "NZD",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 60
+    }
+  },
+  "new-zealand-post-study-work-visa": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Verified",
+      "amount": 5000,
+      "currency": "NZD",
+      "period": "Total"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 1670,
+      "currency": "NZD",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 25
+    }
+  },
+  "new-zealand-accredited-employer-work-visa-aewv": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 1540,
+      "currency": "NZD",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 56
+    }
+  },
+  "ireland-stamp-2-student-permission-with-work-rights": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "ireland-third-level-graduate-programme-stamp-1g": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 300,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "ireland-critical-skills-employment-permit": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 28
+    }
+  },
+  "france-working-holiday-visa": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 403,
+    "financial": {
+      "status": "Fetch failed"
+    },
+    "fee": {
+      "status": "Fetch failed"
+    },
+    "processing": {
+      "status": "Fetch failed",
+      "max_days": null
+    }
+  },
+  "spain-digital-nomad-visa": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "portugal-remote-work-residence-route-digital-nomad": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 0,
+    "financial": {
+      "status": "Fetch failed"
+    },
+    "fee": {
+      "status": "Fetch failed"
+    },
+    "processing": {
+      "status": "Fetch failed",
+      "max_days": null
+    }
+  },
+  "portugal-temporary-stay-visa-for-employed-or-independent-work": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "estonia-digital-nomad-long-stay-d-visa": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 120,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "croatia-temporary-stay-of-digital-nomads": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "croatia-university-student-temporary-stay-with-work-rights": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "japan-working-holiday-visa": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "netherlands-orientation-year-residence-permit": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "netherlands-highly-skilled-migrant-residence-permit": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "netherlands-student-residence-permit-with-work-rights": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "sweden-working-holiday-permit": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 0,
+    "financial": {
+      "status": "Fetch failed"
+    },
+    "fee": {
+      "status": "Fetch failed"
+    },
+    "processing": {
+      "status": "Fetch failed",
+      "max_days": null
+    }
+  },
+  "sweden-work-permit-for-former-students": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 0,
+    "financial": {
+      "status": "Fetch failed"
+    },
+    "fee": {
+      "status": "Fetch failed"
+    },
+    "processing": {
+      "status": "Fetch failed",
+      "max_days": null
+    }
+  },
+  "austria-student-residence-permit-with-work-rights": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "austria-graduate-job-search-extension": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "austria-red-white-red-card": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "czechia-working-holiday-visa-for-korean-citizens": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "czechia-employee-card": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 15
+    }
+  },
+  "malta-student-residence-with-employment-access": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "austria-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "austria-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "austria-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "austria-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "austria-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "austria-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "austria-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "belgium-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 120
+    }
+  },
+  "belgium-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 90
+    }
+  },
+  "belgium-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 60
+    }
+  },
+  "belgium-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 30
+    }
+  },
+  "belgium-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 90
+    }
+  },
+  "belgium-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 90
+    }
+  },
+  "belgium-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 30
+    }
+  },
+  "bulgaria-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 14
+    }
+  },
+  "bulgaria-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "bulgaria-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 14
+    }
+  },
+  "bulgaria-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "bulgaria-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "bulgaria-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 14
+    }
+  },
+  "bulgaria-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "croatia-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "croatia-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 9.29,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "croatia-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "croatia-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "croatia-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 60
+    }
+  },
+  "croatia-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 9.29,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "croatia-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "cyprus-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "cyprus-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "cyprus-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "cyprus-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "cyprus-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 200,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 75
+    }
+  },
+  "cyprus-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "cyprus-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "czechia-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "czechia-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "czechia-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "czechia-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "czechia-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 30
+    }
+  },
+  "czechia-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "czechia-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "estonia-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "estonia-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "estonia-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "estonia-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "estonia-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "estonia-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "estonia-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "finland-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 30
+    }
+  },
+  "finland-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "finland-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "finland-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "finland-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 90
+    }
+  },
+  "finland-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 100,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "finland-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "france-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "france-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "france-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "france-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "france-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "france-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "france-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "germany-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "germany-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "germany-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "germany-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "germany-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "germany-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "germany-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "greece-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 300,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "greece-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "greece-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "greece-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 150,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "greece-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 180,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "greece-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 15,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "greece-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 150,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "hungary-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 8
+    }
+  },
+  "hungary-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 8
+    }
+  },
+  "hungary-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 30
+    }
+  },
+  "hungary-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 8
+    }
+  },
+  "hungary-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 8
+    }
+  },
+  "hungary-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 8
+    }
+  },
+  "hungary-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 8
+    }
+  },
+  "italy-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "italy-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "italy-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "italy-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "italy-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "italy-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 60
+    }
+  },
+  "italy-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "latvia-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "latvia-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "latvia-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 30
+    }
+  },
+  "latvia-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 30
+    }
+  },
+  "latvia-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 30
+    }
+  },
+  "latvia-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 30
+    }
+  },
+  "latvia-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 30
+    }
+  },
+  "lithuania-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 120
+    }
+  },
+  "lithuania-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 7
+    }
+  },
+  "lithuania-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 90
+    }
+  },
+  "lithuania-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 90
+    }
+  },
+  "lithuania-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 60
+    }
+  },
+  "lithuania-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 14
+    }
+  },
+  "lithuania-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 90
+    }
+  },
+  "luxembourg-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 40
+    }
+  },
+  "luxembourg-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "luxembourg-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 60
+    }
+  },
+  "luxembourg-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 40
+    }
+  },
+  "luxembourg-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 80,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 40
+    }
+  },
+  "luxembourg-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "luxembourg-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 40
+    }
+  },
+  "malta-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "malta-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "malta-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "malta-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 27.5,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "malta-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "malta-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "malta-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 27.5,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "netherlands-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 120
+    }
+  },
+  "netherlands-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 345,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 120
+    }
+  },
+  "netherlands-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 120
+    }
+  },
+  "netherlands-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "netherlands-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 120
+    }
+  },
+  "netherlands-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 210,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 120
+    }
+  },
+  "netherlands-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "poland-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 14
+    }
+  },
+  "poland-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "poland-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 80,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 30
+    }
+  },
+  "poland-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 30
+    }
+  },
+  "poland-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 14
+    }
+  },
+  "poland-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 14
+    }
+  },
+  "poland-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 30
+    }
+  },
+  "portugal-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "portugal-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "portugal-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "portugal-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "portugal-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "portugal-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "portugal-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "romania-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "romania-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "romania-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "romania-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "romania-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "romania-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "romania-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "slovakia-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 165.5,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "slovakia-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 165.5,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "slovakia-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "slovakia-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "slovakia-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 170,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 90
+    }
+  },
+  "slovakia-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Verified",
+      "amount": 60,
+      "currency": "EUR",
+      "period": "Total"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "slovakia-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "slovenia-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "slovenia-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "slovenia-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "slovenia-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "slovenia-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "slovenia-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "slovenia-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "spain-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "spain-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "spain-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "spain-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "spain-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "spain-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "spain-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Not published on source",
+      "max_days": null
+    }
+  },
+  "sweden-일반-취업-체류-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "sweden-고숙련-취업-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "sweden-연구자-체류-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Not published on source"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "sweden-학생-체류-중-근로-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "sweden-기업-내-전근자-ict-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Verified",
+      "max_days": 90
+    }
+  },
+  "sweden-계절근로자-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Varies or not numeric"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  },
+  "sweden-연구-유학-종료-후-구직-경로": {
+    "checked_at": "2026-08-20",
+    "source_http_status": 200,
+    "financial": {
+      "status": "Not published on source"
+    },
+    "fee": {
+      "status": "Varies or not numeric"
+    },
+    "processing": {
+      "status": "Varies or not numeric",
+      "max_days": null
+    }
+  }
+}

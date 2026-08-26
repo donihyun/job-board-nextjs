@@ -1,0 +1,34 @@
+[
+  {
+    "date": "2026-08-25",
+    "scope": "visachart",
+    "macrostructure": "Workbench",
+    "theme": "Cobalt light canvas",
+    "enrichment": "none",
+    "brief": "Lighter VisaChart canvas, notice, and selected states"
+  },
+  {
+    "date": "2026-08-25",
+    "scope": "working-holiday",
+    "macrostructure": "Workbench",
+    "theme": "Cobalt",
+    "enrichment": "none",
+    "brief": "Filterable comparison hub for 28 working-holiday destinations"
+  },
+  {
+    "date": "2026-08-19",
+    "scope": "app",
+    "macrostructure": "Workbench / Long Document",
+    "theme": "Cobalt",
+    "enrichment": "real travel photography",
+    "brief": "VIKB truth and mobile-first UI pass"
+  },
+  {
+    "date": "2026-08-19",
+    "scope": "visachart",
+    "macrostructure": "Workbench / Catalogue",
+    "theme": "Cobalt",
+    "enrichment": "none",
+    "brief": "Filterable visa comparison index with dedicated detail routes"
+  }
+]

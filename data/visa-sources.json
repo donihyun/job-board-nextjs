@@ -1,0 +1,120 @@
+[
+  {
+    "id": "australia-work-and-holiday-462",
+    "country": "Australia",
+    "visaName": "Work and Holiday visa (subclass 462)",
+    "url": "https://immi.homeaffairs.gov.au/visas/working-in-australia/work-rights-and-exploitation/work-restrictions",
+    "enabled": false,
+    "disabledReason": "Government site rejects server-side requests; browser adapter required"
+  },
+  {
+    "id": "canada-international-experience",
+    "country": "Canada",
+    "visaName": "International Experience Canada",
+    "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/iec.html"
+  },
+  {
+    "id": "uk-youth-mobility-scheme",
+    "country": "United Kingdom",
+    "visaName": "Youth Mobility Scheme visa",
+    "url": "https://www.gov.uk/youth-mobility"
+  },
+  {
+    "id": "germany-opportunity-card",
+    "country": "Germany",
+    "visaName": "Opportunity Card",
+    "url": "https://www.make-it-in-germany.com/en/visa-residence/opportunity-card/job-search-opportunity-card/print",
+    "enabled": false,
+    "disabledReason": "Government site returns a client-rendered shell; browser adapter required"
+  },
+  {
+    "id": "eu-austria-employed-worker", "country": "Austria", "visaName": "Employed worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/employed-worker-austria_en"
+  },
+  {
+    "id": "eu-austria-highly-qualified", "country": "Austria", "visaName": "Highly-qualified worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/highly-qualified-worker-austria_en"
+  },
+  {
+    "id": "eu-austria-student", "country": "Austria", "visaName": "Student", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/student-austria_en"
+  },
+  {
+    "id": "eu-belgium-employed-worker", "country": "Belgium", "visaName": "Employed worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/employed-worker-belgium_en"
+  },
+  {
+    "id": "eu-belgium-highly-qualified", "country": "Belgium", "visaName": "Highly-qualified worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/highly-qualified-worker-belgium_en"
+  },
+  {
+    "id": "eu-belgium-student", "country": "Belgium", "visaName": "Student", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/student-belgium_en"
+  },
+  {
+    "id": "eu-czechia-employed-worker", "country": "Czechia", "visaName": "Employed worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/employed-worker-czechia_en"
+  },
+  {
+    "id": "eu-czechia-highly-qualified", "country": "Czechia", "visaName": "Highly-qualified worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/highly-qualified-worker-czechia_en"
+  },
+  {
+    "id": "eu-czechia-student", "country": "Czechia", "visaName": "Student", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/student-czechia_en"
+  },
+  {
+    "id": "eu-finland-employed-worker", "country": "Finland", "visaName": "Employed worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/employed-worker-finland_en"
+  },
+  {
+    "id": "eu-finland-highly-qualified", "country": "Finland", "visaName": "Highly-qualified worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/highly-qualified-worker-finland_en"
+  },
+  {
+    "id": "eu-finland-student", "country": "Finland", "visaName": "Student", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/student-finland_en"
+  },
+  {
+    "id": "eu-france-employed-worker", "country": "France", "visaName": "Employed worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/employed-worker-france_en"
+  },
+  {
+    "id": "eu-france-highly-qualified", "country": "France", "visaName": "Highly-qualified worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/highly-qualified-worker-france_en"
+  },
+  {
+    "id": "eu-france-student", "country": "France", "visaName": "Student", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/student-france_en"
+  },
+  {
+    "id": "eu-germany-employed-worker", "country": "Germany", "visaName": "Employed worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/employed-worker-germany_en"
+  },
+  {
+    "id": "eu-germany-highly-qualified", "country": "Germany", "visaName": "Highly-qualified worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/highly-qualified-worker-germany_en"
+  },
+  {
+    "id": "eu-germany-student", "country": "Germany", "visaName": "Student", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/student-germany_en"
+  },
+  {
+    "id": "eu-italy-employed-worker", "country": "Italy", "visaName": "Employed worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/employed-worker-italy_en"
+  },
+  {
+    "id": "eu-italy-highly-qualified", "country": "Italy", "visaName": "Highly-qualified worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/highly-qualified-worker-italy_en"
+  },
+  {
+    "id": "eu-italy-student", "country": "Italy", "visaName": "Student", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/student-italy_en"
+  },
+  {
+    "id": "eu-netherlands-employed-worker", "country": "Netherlands", "visaName": "Employed worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/employed-worker-netherlands_en"
+  },
+  {
+    "id": "eu-netherlands-highly-qualified", "country": "Netherlands", "visaName": "Highly-qualified worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/highly-qualified-worker-netherlands_en"
+  },
+  {
+    "id": "eu-netherlands-student", "country": "Netherlands", "visaName": "Student", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/student-netherlands_en"
+  },
+  {
+    "id": "eu-spain-employed-worker", "country": "Spain", "visaName": "Employed worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/employed-worker-spain_en"
+  },
+  {
+    "id": "eu-spain-highly-qualified", "country": "Spain", "visaName": "Highly-qualified worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/highly-qualified-worker-spain_en"
+  },
+  {
+    "id": "eu-spain-student", "country": "Spain", "visaName": "Student", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/student-spain_en"
+  },
+  {
+    "id": "eu-sweden-employed-worker", "country": "Sweden", "visaName": "Employed worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/employed-worker-sweden_en"
+  },
+  {
+    "id": "eu-sweden-highly-qualified", "country": "Sweden", "visaName": "Highly-qualified worker", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/highly-qualified-worker-sweden_en"
+  },
+  {
+    "id": "eu-sweden-student", "country": "Sweden", "visaName": "Student", "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/eu-immigration-portal/student-sweden_en"
+  }
+]

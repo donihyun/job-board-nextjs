@@ -28,10 +28,10 @@ export default function CtaSection() {
           variants={fadeInUpVariants}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold mb-4">Ready to Start Your Adventure?</h2>
-          <p className="text-xl mb-8">Join thousands of happy travelers who have found their perfect working holiday with us.</p>
-          <Link href="/dashboard" className="inline-block bg-white text-zinc-900 px-6 py-3 rounded-md hover:bg-zinc-300 hover:text-zinc-800 transition duration-300">
-            Get Started Now
+          <h2 className="text-3xl font-bold mb-4">Find your next job in Australia.</h2>
+          <p className="text-xl mb-8">Search current listings by keyword, category, and contract type.</p>
+          <Link href="/jobs?country=australia" className="inline-block whitespace-nowrap rounded-md bg-white px-6 py-3 text-zinc-900 transition-colors duration-200 hover:bg-zinc-200">
+            Search Australia jobs →
           </Link>
         </motion.div>
       </div>

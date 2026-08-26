@@ -29,35 +29,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-
-const countries = [
-  { value: "australia", label: "Australia" },
-  { value: "austria", label: "Austria" },
-  { value: "belgium", label: "Belgium" },
-  { value: "canada", label: "Canada" },
-  { value: "chile", label: "Chile" },
-  { value: "czech republic", label: "Czech Republic" },
-  { value: "denmark", label: "Denmark" },
-  { value: "finland", label: "Finland" },
-  { value: "france", label: "France" },
-  { value: "germany", label: "Germany" },
-  { value: "hong kong", label: "Hong Kong" },
-  { value: "hungary", label: "Hungary" },
-  { value: "ireland", label: "Ireland" },
-  { value: "israel", label: "Israel" },
-  { value: "italy", label: "Italy" },
-  { value: "japan", label: "Japan" },
-  { value: "netherlands", label: "Netherlands" },
-  { value: "newzealand", label: "New Zealand" },
-  { value: "norway", label: "Norway" },
-  { value: "poland", label: "Poland" },
-  { value: "portugal", label: "Portugal" },
-  { value: "slovakia", label: "Slovakia" },
-  { value: "spain", label: "Spain" },
-  { value: "sweden", label: "Sweden" },
-  { value: "taiwan", label: "Taiwan" },
-  { value: "united kingdom", label: "United Kingdom" },
-] as const;
+import { countries } from "@/constants/countries";
 
 const FormSchema = z.object({
   language: z.string({
@@ -133,7 +105,7 @@ export default function ComboboxForm({ defaultValue, onChange }: ComboboxFormPro
                         <div className="flex w-full justify-between items-center">
                           <div className="w-[70px] h-[70px] relative overflow-hidden shrink-0 rounded-full">
                             <Image
-                              src={`/${currentCountry.value}.png`}
+                              src={currentCountry.flag}
                               fill={true}
                               objectFit="cover"
                               alt={`${currentCountry.label} flag`}
