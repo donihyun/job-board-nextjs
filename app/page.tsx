@@ -1,37 +1,13 @@
 'use client'
 
-import dynamic from 'next/dynamic'
-import { Suspense, lazy } from 'react'
-import Image from 'next/image'
+import { motion } from 'framer-motion'
+import RankingSection from '@/components/ranking-section'
+import FAQSection from '@/components/faq-section'
 import ComboboxForm from '@/components/combobox'
 import Bar from '@/components/bar'
 import Link from 'next/link'
-
-// Dynamically import heavy components with code splitting
-const Motion = dynamic(() => import('framer-motion').then(mod => ({ default: mod.motion.div })), {
-  ssr: false,
-  loading: () => <div className="w-full max-w-6xl mx-auto" />
-})
-
-const RankingSection = dynamic(() => import('@/components/ranking-section'), {
-  ssr: true,
-  loading: () => <div className="py-16 sm:py-20"><div className="container mx-auto px-4"><div className="animate-pulse h-64 bg-gray-100 rounded-lg"></div></div></div>
-})
-
-const BenefitSectionDemo = dynamic(() => import('@/components/landingpagebenefit').then(mod => ({ default: mod.BenefitSectionDemo })), {
-  ssr: true,
-  loading: () => <div className="py-16 sm:py-20 bg-gray-50"><div className="animate-pulse h-64"></div></div>
-})
-
-const FAQSection = dynamic(() => import('@/components/faq-section'), {
-  ssr: true,
-  loading: () => <div className="py-16 sm:py-20"><div className="animate-pulse h-64"></div></div>
-})
-
-const CtaSection = dynamic(() => import('@/components/ctasection'), {
-  ssr: true,
-  loading: () => <div className="py-16 sm:py-20"><div className="animate-pulse h-32"></div></div>
-})
+import CtaSection from '@/components/ctasection'
+import { BenefitSectionDemo } from '@/components/landingpagebenefit'
 
 export default function LandingPage() {
   return (
@@ -39,27 +15,25 @@ export default function LandingPage() {
       {/* Hero Section with Diagonal Split */}
       <div className="relative min-h-[100svh] overflow-hidden">
       <Bar />
-
+      
       {/* Background Image with Gradient Overlay */}
-      <div className="absolute inset-0">
-        <Image
-          src="/newzealand/bg.jpg"
-          alt="New Zealand background"
-          fill
-          priority
-          quality={85}
-          className="object-cover"
-          sizes="100vw"
-        />
-      </div>
-
+      <div
+        className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+        style={{
+          backgroundImage: 'url(/newzealand/bg.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
       {/* Content Container */}
       <div className="relative z-10 flex min-h-[100svh] items-center px-4 pb-12 pt-24 sm:px-6 lg:px-8">
         {/* Hero Content */}
-        <Motion
+        <motion.div
+          className="w-full max-w-6xl mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -67,7 +41,8 @@ export default function LandingPage() {
           <div className="grid items-center gap-10 md:grid-cols-12 lg:gap-16">
             {/* Left Side - Title and Text */}
             <div className="md:col-span-6 text-left">
-              <Motion
+              <motion.div
+                className="space-y-6"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -75,7 +50,7 @@ export default function LandingPage() {
                 <span className="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-sm font-medium">
                   워킹 홀리데이 비자 지원 가능
                 </span>
-
+                
                 <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
                   당신의
                   <span className="block mt-2">완벽한 워킹</span>
@@ -83,15 +58,16 @@ export default function LandingPage() {
                     홀리데이를 찾아보세요
                   </span>
                 </h1>
-
+                
                 <p className="text-xl text-white/90 max-w-2xl">
                   전 세계의 기회와 모험을 탐험하세요
                 </p>
-              </Motion>
+              </motion.div>
             </div>
 
             {/* Right Side - Search Box */}
-            <Motion
+            <motion.div 
+              className="md:col-span-6"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -132,9 +108,9 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
-            </Motion>
+            </motion.div>
           </div>
-        </Motion>
+        </motion.div>
       </div>
 
     </div>
