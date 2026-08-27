@@ -112,7 +112,7 @@ export default function ComboboxForm({ defaultValue, onChange }: ComboboxFormPro
                               className="shrink-0"
                             />
                           </div>
-                          <div className="text-md lg:text-xl shrink-1 hidden xl:block font-bold">
+                          <div className="text-md lg:text-xl shrink-1 font-bold">
                             {currentCountry.label}
                           </div>
                           <ChevronsUpDown className="h-8 w-8 shrink-1 opacity-50" />

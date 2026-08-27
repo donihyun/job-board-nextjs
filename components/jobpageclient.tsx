@@ -232,7 +232,7 @@ export default function JobPageClient({
 
       <div className="grid w-full items-start gap-6 lg:grid-cols-4">
         {/* Filters Section */}
-        <aside className="lg:col-span-1">
+        <aside className="hidden lg:block lg:col-span-1">
           {/* Categories */}
           <h2 className="mt-1 text-xl font-bold">Category</h2>
           <div className="mt-4 rounded-md border border-zinc-200 bg-zinc-50 px-3 py-2">
@@ -320,7 +320,7 @@ export default function JobPageClient({
         </aside>
 
         {/* Jobs List Section */}
-        <main className="min-w-0 lg:col-span-3">
+        <main className="min-w-0 col-span-full lg:col-span-3">
           <div className="flex items-center gap-x-10 flex-wrap">
             <h1 className="ml-5 mb-5 text-xl font-bold">
               {filters.industry === "none"
