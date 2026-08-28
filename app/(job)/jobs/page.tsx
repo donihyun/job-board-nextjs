@@ -59,6 +59,15 @@ export default async function JobPage({ searchParams }: PageProps) {
       searchCareerjet(params),
       searchAdzuna(params),
     ]);
+
+    // Log any provider failures
+    searches.forEach((result, index) => {
+      if (result.status === "rejected") {
+        const providerName = index === 0 ? 'CareerJet' : 'Adzuna';
+        console.error(`${providerName} search failed:`, result.reason);
+      }
+    });
+
     const results = searches.flatMap((result) =>
       result.status === "fulfilled" ? [result.value] : []
     );
