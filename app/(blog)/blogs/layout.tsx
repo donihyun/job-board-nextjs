@@ -27,7 +27,7 @@ export default async function blogLayout({children}:{children:React.ReactNode}){
     return(
     <>
     <Container>
-      <BarforHeader firstName = {firstName}  lastName = {lastName} userName={userName} photo = {photourl} />
+      <BarforHeader firstName = {firstName}  lastName = {lastName} userName={userName} photo = {photourl} enableScrollAnimation={false} />
       {children}
       <Footer/>
     </Container>

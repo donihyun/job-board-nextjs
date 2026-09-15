@@ -1,0 +1,14 @@
+# Blog topics for batch generation
+# Format: topic | category
+# Categories: work-jobs, life-australia, visa-immigration
+
+How to Get Your RSA Certificate in Melbourne | work-jobs
+Best Cafes Hiring Backpackers in Sydney | work-jobs
+Complete Guide to Australian Superannuation for Working Holiday Makers | life-australia
+How to Apply for a Second Year Working Holiday Visa | visa-immigration
+Regional Work Guide: Farm Jobs in Queensland | work-jobs
+Cost of Living Comparison: Sydney vs Melbourne vs Brisbane | life-australia
+How to Find Share Houses in Australia | life-australia
+Working Holiday Visa vs Student Visa: Which is Right for You? | visa-immigration
+Top 15 Highest Paying Casual Jobs in Australia | work-jobs
+Australian Mobile Plans for Backpackers: Complete Guide | life-australia

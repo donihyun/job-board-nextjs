@@ -1,6 +1,6 @@
 import { PortableText, PortableTextComponents } from '@portabletext/react'
 import Image from 'next/image'
-import { urlFor } from '@/lib/sanity.client'
+import { urlFor } from '@/lib/sanity.image'
 
 const components: PortableTextComponents = {
   types: {
@@ -25,17 +25,17 @@ const components: PortableTextComponents = {
     },
   },
   block: {
-    h1: ({ children }) => (
-      <h1 className="text-4xl font-bold mt-12 mb-4">{children}</h1>
+    h1: ({ children, value }) => (
+      <h1 id={`section-${value._key}`} className="text-4xl font-bold mt-12 mb-4">{children}</h1>
     ),
-    h2: ({ children }) => (
-      <h2 className="text-3xl font-bold mt-10 mb-4">{children}</h2>
+    h2: ({ children, value }) => (
+      <h2 id={`section-${value._key}`} className="text-3xl font-bold mt-10 mb-4">{children}</h2>
     ),
-    h3: ({ children }) => (
-      <h3 className="text-2xl font-bold mt-8 mb-3">{children}</h3>
+    h3: ({ children, value }) => (
+      <h3 id={`section-${value._key}`} className="text-2xl font-bold mt-8 mb-3">{children}</h3>
     ),
-    h4: ({ children }) => (
-      <h4 className="text-xl font-bold mt-6 mb-2">{children}</h4>
+    h4: ({ children, value }) => (
+      <h4 id={`section-${value._key}`} className="text-xl font-bold mt-6 mb-2">{children}</h4>
     ),
     normal: ({ children }) => (
       <p className="mb-4 leading-7">{children}</p>

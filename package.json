@@ -12,7 +12,11 @@
     "start": "next start",
     "lint": "next lint",
     "visa:monitor": "node scripts/visa-monitor.mjs",
-    "test:visa-monitor": "node --test scripts/visa-monitor.test.mjs"
+    "test:visa-monitor": "node --test scripts/visa-monitor.test.mjs",
+    "blog:generate": "npx tsx scripts/generate-content.ts",
+    "blog:smart": "npx tsx scripts/generate-with-selection.ts",
+    "blog:seed": "npx tsx scripts/seed-sanity.ts",
+    "blog:fix-formatting": "npx tsx scripts/fix-markdown-formatting.ts"
   },
   "dependencies": {
     "@clerk/nextjs": "^5.3.1",
@@ -67,6 +71,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.19",
+    "dotenv": "^17.4.2",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss": "^8.4.38",
