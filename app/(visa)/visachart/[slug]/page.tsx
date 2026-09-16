@@ -2,17 +2,89 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { notFound } from "next/navigation";
-import { categoryCautionsKo, categoryKo, countryKo, durationKo, eligibilityKo, jobOfferKo, prRelevanceKo, visaValueKo, workScopeKo, workVisaList } from "@/constants/visas";
+import { createClient } from "@sanity/client";
+import { categoryCautionsKo, categoryKo, countryKo, durationKo, eligibilityKo, jobOfferKo, prRelevanceKo, visaValueKo, workScopeKo } from "@/constants/visas";
+import type { Visa } from "@/constants/visas";
 import AdSlot from "@/components/ad-slot";
 
 type Props = { params: { slug: string } };
 
-export function generateStaticParams() {
-  return workVisaList.map((visa) => ({ slug: visa.slug }));
+// ISR: Revalidate every 1 hour
+export const revalidate = 3600;
+
+const sanityClient = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  useCdn: true,
+  apiVersion: '2024-01-01',
+});
+
+async function getVisaBySlug(slug: string): Promise<Visa | null> {
+  const visa = await sanityClient.fetch<Visa | null>(
+    `*[_type == "visa" && slug.current == $slug][0] {
+      country,
+      visa_type,
+      category,
+      duration,
+      duration_normalized,
+      processing_time,
+      application_process,
+      official_link,
+      family_allowed,
+      financial_proof_required,
+      work_scope,
+      job_offer_required,
+      job_offer_note,
+      pr_relevance,
+      pr_relevance_note,
+      eligible_passports,
+      age_range,
+      age_normalized,
+      korean_passport,
+      work_hours_normalized,
+      financial_normalized,
+      processing_normalized,
+      application_fee_normalized,
+      metadata_audit,
+      restrictions,
+      last_verified,
+      source_status,
+      "slug": slug.current,
+      is_temporary,
+      detail_available,
+      application_process_ko,
+      restrictions_ko
+    }`,
+    { slug },
+    {
+      cache: 'force-cache',
+      next: { revalidate: 3600 }
+    }
+  );
+
+  return visa;
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const visa = workVisaList.find((item) => item.slug === params.slug);
+async function getAllVisaSlugs(): Promise<string[]> {
+  const slugs = await sanityClient.fetch<string[]>(
+    `*[_type == "visa"].slug.current`,
+    {},
+    {
+      cache: 'force-cache',
+      next: { revalidate: 3600 }
+    }
+  );
+
+  return slugs;
+}
+
+export async function generateStaticParams() {
+  const slugs = await getAllVisaSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const visa = await getVisaBySlug(params.slug);
   if (!visa) return {};
   return {
     title: `${visa.country} ${visa.visa_type} — VisaChart`,
@@ -20,8 +92,8 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function VisaDetailPage({ params }: Props) {
-  const visa = workVisaList.find((item) => item.slug === params.slug);
+export default async function VisaDetailPage({ params }: Props) {
+  const visa = await getVisaBySlug(params.slug);
   if (!visa) notFound();
 
   return (

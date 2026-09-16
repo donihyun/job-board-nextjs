@@ -34,7 +34,7 @@ export default async function CountryLayout({
     <div className="min-h-screen bg-[var(--color-control)]">
       {/* Hallmark · genre: modern-minimal · macrostructure: Workbench · design-system: design.md · designed-as-app */}
       <Container>
-        <BarforHeader firstName={firstName} lastName={lastName} userName={userName} photo={photourl} enableScrollAnimation={false} lightNotice />
+        <BarforHeader firstName={firstName} lastName={lastName} userName={userName} photo={photourl} enableScrollAnimation={false} />
         {children}
         <Footer />
       </Container>
